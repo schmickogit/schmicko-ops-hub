@@ -388,7 +388,24 @@ input::placeholder,textarea::placeholder{color:var(--muted)}
       </div>
       <div class="cfg"><div class="cfg-title">Google Apps Script Setup</div><div class="cfg-text">Deploy <code>bookings_script.gs</code> from your bookings sheet and paste the URL below.</div><div style="margin-top:10px"><div class="urow"><label>Web App URL</label><input type="text" id="bookings-url" placeholder="https://script.google.com/macros/s/..." oninput="saveUrl('bookings',this.value)"><button class="btn sm" onclick="fetchBookings()">Connect</button></div></div></div>
       <div class="g3" id="bk-stats" style="margin-bottom:16px"><div class="stat green"><div class="stat-label">Total Bookings</div><div class="stat-val">--</div><div class="stat-sub">this month</div></div><div class="stat purple"><div class="stat-label">Quotes Sent</div><div class="stat-val">--</div><div class="stat-sub">this month</div></div><div class="stat info"><div class="stat-label">Active Staff</div><div class="stat-val">--</div><div class="stat-sub">with activity</div></div></div>
-      <div class="card"><div class="card-header"><div class="card-title">Team Breakdown</div><span id="bk-month-lbl" style="font-size:12px;color:var(--muted)"></span></div><div class="card-body" style="padding:0"><table class="ttable" style="width:100%"><thead><tr><th style="width:32px">#</th><th>Staff</th><th style="text-align:center">Bookings</th><th style="text-align:center">Quotes</th><th style="text-align:center">Total</th><th>Progress</th></tr></thead><tbody id="bk-tbody"><tr><td colspan="6" style="padding:32px;text-align:center;color:var(--muted)">Connect your Google Sheet above</td></tr></tbody></table></div></div>
+      <!-- TARGET TRACKER -->
+      <div class="card" style="margin-bottom:16px">
+        <div class="card-header">
+          <div class="card-title">&#127919; Monthly Target Tracker</div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <span style="font-size:11px;color:var(--muted)">Target:</span>
+            <input type="number" id="bk-target" min="1" placeholder="e.g. 50"
+              style="width:80px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:5px 8px;color:var(--text);font-family:var(--mono);font-size:13px;outline:none;text-align:center"
+              oninput="saveTarget(this.value);renderTarget()">
+            <span style="font-size:11px;color:var(--muted)">bookings/month</span>
+          </div>
+        </div>
+        <div class="card-body" id="target-tracker-body">
+          <div style="text-align:center;color:var(--muted);font-size:13px;padding:8px">Set a monthly bookings target above to track progress</div>
+        </div>
+      </div>
+
+      <div class="card"><div class="card-header"><div class="card-title">Team Breakdown</div><span id="bk-month-lbl" style="font-size:12px;color:var(--muted)"></span></div><div class="card-body" style="padding:0"><table class="ttable" style="width:100%"><thead><tr><th style="width:32px">#</th><th>Staff Member</th><th style="text-align:center">Bookings</th><th style="text-align:center">Quotes Sent</th><th style="text-align:center">Total</th></tr></thead><tbody id="bk-tbody"><tr><td colspan="6" style="padding:32px;text-align:center;color:var(--muted)">Connect your Google Sheet above</td></tr></tbody></table></div></div>
     </div>
 
     <!-- SMS -->
@@ -806,6 +823,114 @@ function clearDone(){todos=todos.filter(function(x){return !x.done;});saveTodos(
 populateMemberDropdowns();
 renderTodos();
 
+
+// TARGET TRACKER
+function saveTarget(val){store('bk_target',parseInt(val)||0);}
+
+function renderTarget(){
+  var body=document.getElementById('target-tracker-body');
+  if(!body)return;
+
+  var target=parseInt(load('bk_target',0))||0;
+  var inp=document.getElementById('bk-target');
+  if(inp&&!inp.value&&target)inp.value=target;
+
+  if(!target){
+    body.innerHTML='<div style="text-align:center;color:var(--muted);font-size:13px;padding:8px">Set a monthly bookings target above to track progress</div>';
+    return;
+  }
+
+  var total=parseInt((document.getElementById('ov-bk-b')||{}).textContent)||0;
+  // Get from last fetch
+  if(window._bkData)total=window._bkData.total_bookings||0;
+
+  var pct=Math.min(Math.round((total/target)*100),100);
+  var remaining=Math.max(target-total,0);
+  var over=total>target?total-target:0;
+
+  // Days left in month
+  var now=new Date();
+  var lastDay=new Date(now.getFullYear(),now.getMonth()+1,0);
+  var daysLeft=lastDay.getDate()-now.getDate();
+  var daysGone=now.getDate()-1;
+  var totalDays=lastDay.getDate();
+  var dayPct=Math.round((daysGone/totalDays)*100);
+
+  // On track check — are bookings keeping pace with days elapsed?
+  var expectedByNow=Math.round((dayPct/100)*target);
+  var onTrack=total>=expectedByNow;
+  var ahead=total-expectedByNow;
+
+  // Milestones
+  var milestones=[
+    {pct:25,label:'25%',icon:'&#127959;'},
+    {pct:50,label:'Halfway!',icon:'&#127774;'},
+    {pct:75,label:'75%',icon:'&#128293;'},
+    {pct:100,label:'Target hit!',icon:'&#127881;'}
+  ];
+
+  var statusColor=over?'var(--success)':onTrack?'var(--accent2)':'var(--warn)';
+  var statusText=over?'&#127881; Target smashed! '+over+' over!':onTrack?'&#9989; On track ('+Math.abs(ahead)+' ahead of pace)':'&#9888; Behind pace by '+Math.abs(ahead)+' bookings';
+
+  var html='<div style="padding:4px 0">';
+
+  // Big number display
+  html+='<div style="display:flex;align-items:flex-end;gap:16px;margin-bottom:20px">';
+  html+='<div><div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px">Bookings This Month</div>';
+  html+='<div style="font-size:52px;font-weight:700;font-family:var(--mono);color:'+(over?'var(--success)':'var(--text)')+'">'+total+'</div></div>';
+  html+='<div style="padding-bottom:12px"><span style="font-size:20px;color:var(--muted)">/</span> <span style="font-size:24px;font-weight:600;color:var(--muted)">'+target+'</span></div>';
+  html+='<div style="padding-bottom:10px;margin-left:auto;text-align:right">';
+  html+='<div style="font-size:13px;font-weight:600;color:'+statusColor+'">'+statusText+'</div>';
+  html+='<div style="font-size:11px;color:var(--muted);margin-top:4px">'+daysLeft+' days left in month</div>';
+  html+='</div>';
+  html+='</div>';
+
+  // Progress bar with milestones
+  html+='<div style="position:relative;margin-bottom:32px">';
+  // Day progress (ghost bar behind)
+  html+='<div style="height:12px;background:var(--surface2);border-radius:8px;overflow:hidden;margin-bottom:8px;position:relative">';
+  html+='<div style="position:absolute;top:0;left:0;height:100%;width:'+dayPct+'%;background:rgba(255,255,255,.06);border-radius:8px"></div>';
+  html+='<div style="position:absolute;top:0;left:0;height:100%;width:'+pct+'%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:8px;transition:width .6s ease"></div>';
+  html+='</div>';
+
+  // Milestone markers
+  html+='<div style="position:relative;height:28px">';
+  milestones.forEach(function(m){
+    var reached=pct>=m.pct;
+    html+='<div style="position:absolute;left:'+m.pct+'%;transform:translateX(-50%);text-align:center">';
+    html+='<div style="font-size:'+(reached?'18px':'14px')+'";transition:.3s>'+(reached?m.icon:'&#9898;')+'</div>';
+    html+='<div style="font-size:10px;color:'+(reached?'var(--text)':'var(--muted)')+';font-weight:'+(reached?'600':'400')+'">'+m.label+'</div>';
+    html+='</div>';
+  });
+  html+='</div>';
+  html+='</div>';
+
+  // Last 7 days countdown
+  if(daysLeft<=7){
+    var needed=Math.ceil(remaining/Math.max(daysLeft,1));
+    html+='<div style="background:rgba(240,160,80,.08);border:1px solid rgba(240,160,80,.25);border-radius:8px;padding:12px 16px;display:flex;align-items:center;gap:12px">';
+    html+='<span style="font-size:24px">&#9201;</span>';
+    html+='<div><div style="font-size:13px;font-weight:600;color:var(--warn)">Final countdown — '+daysLeft+' day'+(daysLeft!==1?'s':'')+' to go!</div>';
+    if(remaining>0){
+      html+='<div style="font-size:12px;color:var(--muted);margin-top:2px">Need <strong style="color:var(--text)">'+remaining+'</strong> more bookings — about <strong style="color:var(--text)">'+needed+'</strong>/day to hit target</div>';
+    } else {
+      html+='<div style="font-size:12px;color:var(--success);margin-top:2px">Target already achieved! Keep going! &#127881;</div>';
+    }
+    html+='</div></div>';
+  }
+
+  // Stats row
+  html+='<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px">';
+  html+='<div style="background:var(--surface2);border-radius:8px;padding:10px;text-align:center"><div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px">Progress</div><div style="font-size:18px;font-weight:700;font-family:var(--mono);color:var(--accent)">'+pct+'%</div></div>';
+  html+='<div style="background:var(--surface2);border-radius:8px;padding:10px;text-align:center"><div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px">Remaining</div><div style="font-size:18px;font-weight:700;font-family:var(--mono);color:'+(remaining?'var(--warn)':'var(--success)')+'">'+remaining+'</div></div>';
+  html+='<div style="background:var(--surface2);border-radius:8px;padding:10px;text-align:center"><div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px">Days Left</div><div style="font-size:18px;font-weight:700;font-family:var(--mono);color:'+(daysLeft<=7?'var(--warn)':'var(--text)')+'">'+daysLeft+'</div></div>';
+  html+='<div style="background:var(--surface2);border-radius:8px;padding:10px;text-align:center"><div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px">Daily Pace</div><div style="font-size:18px;font-weight:700;font-family:var(--mono);color:var(--info)">'+(daysLeft>0?Math.ceil(remaining/daysLeft):0)+'</div></div>';
+  html+='</div>';
+
+  html+='</div>';
+  body.innerHTML=html;
+}
+
 // TICKETS
 var tickets=load('tickets',[]);
 function saveTickets(){store('tickets',tickets);updateBadges();}
@@ -862,6 +987,7 @@ async function fetchBookings(){
       '<div class="stat info"><div class="stat-label">Active Staff</div><div class="stat-val">'+((data.rows||[]).length)+'</div><div class="stat-sub">with activity</div></div>';
     document.getElementById('bk-month-lbl').textContent=data.month_label||'';
     window._bkData=data;
+    renderTarget();
     var rows=data.rows||[],max=rows.reduce(function(m,r){return Math.max(m,r.total);},1);
     var tbody=document.getElementById('bk-tbody');
     if(!rows.length){tbody.innerHTML='<tr><td colspan="6" style="padding:32px;text-align:center;color:var(--muted)">No data for '+(data.month_label||curMonth)+'</td></tr>';return;}
@@ -1462,7 +1588,7 @@ renderCancels();
 restoreUrls();
 // Pre-fill all sheet URLs (hardcoded — no manual entry needed)
 var _URLS = {
-  bookings:    'https://script.google.com/macros/s/AKfycbyGZC3PMVhAnu5slV5ohgaSh6HxVGHyzI0ig_1FXcEEDzkdIWW6WAb3ryCU8BxelUnR/exec',
+  bookings:    'https://script.google.com/macros/s/AKfycbxN7Z-0EDrT811faJ7kZdweGEKsZQb6SbDg8BXDGmPAtMnoofwrzTBhAimVKhwRK9yj/exec',
   sms:         'https://script.google.com/macros/s/AKfycbypd-W0_zBfPoAy9ntXETTgxzQbc96vBUHtNpfADmYLPrtiTA0kgpSk1QsmczMfrgkg/exec',
   leads:       'https://script.google.com/macros/s/AKfycbyMz6-sY1hIuX-QeO54Fe2cogSEHaw3KdtBpxmg4QIc2QJO4bdMCRuQHq-mEPFBdJK4/exec',
   missedcalls: 'https://script.google.com/macros/s/AKfycbwB_-2FvUf4dZkUEVtXtXLbocPh2u4KvXKMGvuejMxzRBOyzTVx7VaUhTGfrfHyLsI/exec'
