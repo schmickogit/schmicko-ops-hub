@@ -139,6 +139,7 @@ input::placeholder,textarea::placeholder{color:var(--muted)}
     <div class="nav-item" onclick="showTab('training')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 1L2 4v4c0 3.3 2.6 6.4 6 7 3.4-.6 6-3.7 6-7V4L8 1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Training</div>
     <div class="nav-section">Admin</div>
     <div class="nav-item" onclick="showTab('missedcalls')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 3l10 10M13 6V3h-3M3 10v3h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Missed Calls<span class="live-dot"></span></div>
+    <div class="nav-item" onclick="showTab('pipeline')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="4" height="10" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="6" y="1" width="4" height="12" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="5" width="4" height="8" rx="1" stroke="currentColor" stroke-width="1.5"/></svg>Pipeline</div>
     <div class="nav-item" onclick="showTab('leadform')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 2h12v12H2zM2 6h12M6 6v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Lead Form</div>
     <div class="nav-item" onclick="showTab('cancellations')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M5 8h6M8 5v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Cancel / Reschedule</div>
     <div class="nav-item" onclick="showTab('history')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 3v5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M2 8a6 6 0 1 0 1-3.46" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M2 4v4h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Change History</div>
@@ -252,11 +253,18 @@ input::placeholder,textarea::placeholder{color:var(--muted)}
             <button onclick="showOvTA()" style="width:26px;height:26px;border-radius:6px;border:none;background:var(--accent);color:#fff;font-size:18px;cursor:pointer;line-height:1;flex-shrink:0">+</button>
           </div>
         </div>
-        <div id="ov-ta-form" style="display:none;padding:10px 16px;border-bottom:1px solid var(--border)">
-          <div style="display:flex;gap:8px">
-            <input type="text" id="ov-ta-inp" class="iput" style="flex:1" placeholder="Quick task description..." onkeydown="if(event.key==='Enter')addOvTA()">
-            <button class="btn sm" onclick="addOvTA()">Add</button>
-            <button class="btn ghost sm" onclick="hideOvTA()">x</button>
+        <div id="ov-ta-form" style="display:none;padding:12px 16px;border-bottom:1px solid var(--border)">
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <input type="text" id="ov-ta-inp" class="iput" style="width:100%" placeholder="Task description..." onkeydown="if(event.key==='Enter')addOvTA()">
+            <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+              <div style="display:flex;gap:6px;flex:1;min-width:160px">
+                <select id="ov-ta-asgn" style="flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:7px 10px;color:var(--text);font-family:var(--font);font-size:12px;outline:none"><option value="">Unassigned</option></select>
+                <button onclick="showAddMember()" style="background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:7px 8px;color:var(--muted);cursor:pointer;font-size:11px;white-space:nowrap">+ Member</button>
+              </div>
+              <input type="date" id="ov-ta-due" style="background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:7px 10px;color:var(--text);font-family:var(--font);font-size:12px;outline:none;flex:1;min-width:130px">
+              <select id="ov-ta-priority" style="background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:7px 10px;color:var(--text);font-family:var(--font);font-size:12px;outline:none;width:110px"><option value="normal">Normal</option><option value="high">High</option><option value="urgent">Urgent</option></select>
+              <div style="display:flex;gap:6px"><button class="btn sm" onclick="addOvTA()">Add Task</button><button class="btn ghost sm" onclick="hideOvTA()">x</button></div>
+            </div>
           </div>
         </div>
         <div class="card-body" style="padding:0">
@@ -302,19 +310,7 @@ input::placeholder,textarea::placeholder{color:var(--muted)}
         </div>
       </div>
 
-      <!-- Add Member Overlay -->
-      <div id="member-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:999;align-items:center;justify-content:center">
-        <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;width:300px">
-          <div style="font-size:14px;font-weight:600;margin-bottom:6px">Add Team Member</div>
-          <div style="font-size:12px;color:var(--muted);margin-bottom:14px">They will appear in the assigned dropdown.</div>
-          <input type="text" id="new-member-inp" class="iput" style="width:100%;margin-bottom:12px" placeholder="Full name..." onkeydown="if(event.key==='Enter')saveNewMember()">
-          <div style="font-size:11px;color:var(--muted);margin-bottom:12px">Current members: <span id="member-list-display"></span></div>
-          <div style="display:flex;gap:8px;justify-content:flex-end">
-            <button class="btn ghost sm" onclick="hideAddMember()">Cancel</button>
-            <button class="btn sm" onclick="saveNewMember()">Add Member</button>
-          </div>
-        </div>
-      </div>
+
 
       <!-- Filters and Search -->
       <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;align-items:center">
@@ -431,38 +427,28 @@ input::placeholder,textarea::placeholder{color:var(--muted)}
 
     <!-- SHOPIFY -->
     <div class="tab-panel" id="tab-shopify">
-      <div class="sh"><div><div class="sh-title">Shopify Orders</div><div class="sh-sub">Live order feed</div></div><button class="rbtn" onclick="fetchShopify()"><span id="sh-spin">&#8635;</span> Refresh</button></div>
-      <div class="cfg"><div class="cfg-title">Shopify Setup</div><div class="cfg-text">Requires a Cloudflare Worker proxy. Ask me to build one when ready.</div><div style="margin-top:10px"><div class="urow"><label>Proxy URL</label><input type="text" id="shopify-url" placeholder="https://your-worker.workers.dev/orders" oninput="saveUrl('shopify',this.value)"><button class="btn sm" onclick="fetchShopify()">Connect</button></div></div></div>
-      <div class="card"><div class="card-body" style="padding:0"><table class="ttable"><thead><tr><th>Order #</th><th>Customer</th><th>Items</th><th>Total</th><th>Status</th><th>Date</th></tr></thead><tbody id="sh-tbody"><tr><td style="font-family:var(--mono)">#1042</td><td style="font-weight:600">Mia Chen</td><td>Premium Kit x1</td><td style="font-family:var(--mono)">$89.00</td><td><span class="bdg fulfilled">Fulfilled</span></td><td style="color:var(--muted);font-size:11px">Today 9:14am</td></tr><tr><td style="font-family:var(--mono)">#1041</td><td style="font-weight:600">Jake Morrison</td><td>Starter Pack x2</td><td style="font-family:var(--mono)">$54.00</td><td><span class="bdg unfulfilled">Unfulfilled</span></td><td style="color:var(--muted);font-size:11px">Today 8:02am</td></tr></tbody></table><div style="text-align:center;padding:10px;font-size:11px;color:var(--muted)">Sample data - connect Shopify proxy above</div></div></div>
-    </div>
-
-    <!-- AI COMPLAINTS -->
-    <div class="tab-panel" id="tab-ai-complaints">
-      <div class="sh"><div><div class="sh-title">AI Complaint Assistant</div><div class="sh-sub">Paste a complaint and get a resolution strategy</div></div></div>
-      <div class="g2" style="align-items:start">
-        <div><div class="card"><div class="card-header"><div class="card-title">Analyse Complaint</div></div><div class="card-body">
-          <div class="fi" style="margin-bottom:10px"><label>Context (optional)</label><input type="text" id="ai-ctx" placeholder="e.g. Regular customer, 2yr relationship"></div>
-          <textarea id="ai-text" style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px;color:var(--text);font-family:var(--font);font-size:13px;line-height:1.6;min-height:130px;resize:vertical;outline:none" placeholder="Paste the complaint here..."></textarea>
-          <div style="display:flex;gap:8px;margin-top:10px"><button class="btn" style="flex:1" onclick="analyseComplaint()">Analyse with AI</button><button class="btn ghost" onclick="clearComplaint()">Clear</button></div>
-          <div id="ai-think" style="display:none" class="ai-think"><div class="ai-dots"><span>&#9679;</span><span>&#9679;</span><span>&#9679;</span></div><span>Analysing...</span></div>
-          <div id="ai-out" style="display:none" class="ai-resp"></div>
-        </div></div></div>
-        <div><div class="card"><div class="card-header"><div class="card-title">Complaint History</div><span style="font-size:11px;color:var(--muted)" id="hist-count"></span></div><div class="card-body" style="max-height:500px;overflow-y:auto"><div id="hist-list"><div class="es" style="padding:20px">No history yet.</div></div></div></div></div>
+      <div class="sh">
+        <div><div class="sh-title">Shopify Orders</div><div class="sh-sub">Live order feed via Google Sheets</div></div>
+        <button class="rbtn" onclick="fetchShopify()"><span id="sh-spin">&#8635;</span> Refresh</button>
       </div>
-    </div>
-
-    <!-- TRAINING -->
-    <div class="tab-panel" id="tab-training">
-      <div class="sh"><div><div class="sh-title">Training Hub</div><div class="sh-sub">Resources and embedded tools</div></div></div>
+      <div class="cfg">
+        <div class="cfg-title">Google Apps Script Setup</div>
+        <div class="cfg-text">Deploy <code>shopify_script.gs</code> and paste the URL below.</div>
+        <div style="margin-top:10px"><div class="urow"><label>Web App URL</label><input type="text" id="shopify-url" placeholder="https://script.google.com/macros/s/..." oninput="saveUrl('shopify',this.value)"><button class="btn sm" onclick="fetchShopify()">Connect</button></div></div>
+      </div>
       <div class="g3" style="margin-bottom:16px">
-        <div class="tc" onclick="focusKB()"><div style="font-size:28px;margin-bottom:10px">&#128172;</div><div style="font-size:14px;font-weight:600;margin-bottom:6px">WhatsApp KB</div><div style="font-size:12px;color:var(--muted)">Paste your Claude project URL below.</div></div>
-        <div class="tc" onclick="showTab('ai-complaints')"><div style="font-size:28px;margin-bottom:10px">&#128203;</div><div style="font-size:14px;font-weight:600;margin-bottom:6px">Complaint Cases</div><div style="font-size:12px;color:var(--muted)">Review past complaints and resolutions.</div></div>
-        <div class="tc"><div style="font-size:28px;margin-bottom:10px">&#128218;</div><div style="font-size:14px;font-weight:600;margin-bottom:6px">SOPs &amp; Guides</div><div style="font-size:12px;color:var(--muted)">Standard operating procedures.</div></div>
+        <div class="stat info"><div class="stat-label">New Orders</div><div class="stat-val" id="sh-new">--</div><div class="stat-sub">awaiting action</div></div>
+        <div class="stat green"><div class="stat-label">Fulfilled</div><div class="stat-val" id="sh-fulfilled">--</div><div class="stat-sub">completed</div></div>
+        <div class="stat warn"><div class="stat-label">Request Install</div><div class="stat-val" id="sh-install">--</div><div class="stat-sub">pending install</div></div>
       </div>
-      <div class="card"><div class="card-header"><div class="card-title">Embed Tool or Knowledge Base</div></div><div class="card-body">
-        <div class="urow" style="margin-bottom:12px"><label>Embed URL</label><input type="text" id="kb-url" placeholder="https://..." oninput="saveUrl('kb',this.value)"><button class="btn sm" onclick="loadKB()">Load</button></div>
-        <div id="kb-embed" style="border-radius:8px;overflow:hidden;border:1px solid var(--border)"><div class="es" style="padding:40px">Enter a URL above to embed your tool</div></div>
-      </div></div>
+      <div class="card">
+        <div class="card-body" style="padding:0">
+          <table class="ttable" style="width:100%">
+            <thead><tr><th>Order #</th><th>Customer</th><th>Date</th><th>Status</th></tr></thead>
+            <tbody id="sh-tbody"><tr><td colspan="4" style="padding:32px;text-align:center;color:var(--muted)">Connect your Google Sheet above to see live orders</td></tr></tbody>
+          </table>
+        </div>
+      </div>
     </div>
 
     <!-- MISSED CALLS -->
@@ -512,6 +498,16 @@ input::placeholder,textarea::placeholder{color:var(--muted)}
         </div>
         <div class="feed" id="mc-done-feed" style="max-height:300px;padding:12px;gap:8px;opacity:.6">
           <div class="es" style="padding:16px">No actioned items yet.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PIPELINE -->
+    <div class="tab-panel" id="tab-pipeline">
+      <div class="sh"><div><div class="sh-title">Pipeline</div><div class="sh-sub">Zoho Bigin deal pipeline</div></div><a href="https://bigin.zoho.com.au/bigin/org7004311948/Home#/deals/kanban/76706000000038571?pipeline=76706000000000631&sub_pipeline=76706000000273003" target="_blank" class="rbtn">Open in Zoho &#8599;</a></div>
+      <div class="card" style="overflow:hidden">
+        <div class="card-body" style="padding:0">
+          <iframe src="https://bigin.zoho.com.au/bigin/org7004311948/Home#/deals/kanban/76706000000038571?pipeline=76706000000000631&sub_pipeline=76706000000273003" style="width:100%;height:calc(100vh - 160px);border:none;display:block" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -617,6 +613,21 @@ input::placeholder,textarea::placeholder{color:var(--muted)}
 
   </div>
 </main>
+
+<!-- Global member overlay - accessible from any tab -->
+<div id="member-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:9999;align-items:center;justify-content:center">
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;width:300px;box-shadow:0 20px 60px rgba(0,0,0,.5)">
+    <div style="font-size:14px;font-weight:600;margin-bottom:6px">Add Team Member</div>
+    <div style="font-size:12px;color:var(--muted);margin-bottom:14px">They will appear in all assignment dropdowns.</div>
+    <input type="text" id="new-member-inp" class="iput" style="width:100%;margin-bottom:12px" placeholder="Full name..." onkeydown="if(event.key==='Enter')saveNewMember()">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:12px">Current members: <span id="member-list-display"></span></div>
+    <div style="display:flex;gap:8px;justify-content:flex-end">
+      <button class="btn ghost sm" onclick="hideAddMember()">Cancel</button>
+      <button class="btn sm" onclick="saveNewMember()">Add Member</button>
+    </div>
+  </div>
+</div>
+
 </div>
 <script>
 var SK='opshub_';
@@ -633,13 +644,13 @@ function restoreUrls(){
 // CLOCK
 function updateClock(){
   var n=new Date();
-  document.getElementById('clock').textContent=n.toLocaleTimeString('en-AU',{hour:'2-digit',minute:'2-digit'});
-  document.getElementById('date-display').textContent=n.toLocaleDateString('en-AU',{weekday:'short',day:'numeric',month:'short',year:'numeric'});
+  var cl=document.getElementById('clock');if(cl)cl.textContent=n.toLocaleTimeString('en-AU',{hour:'2-digit',minute:'2-digit'});
+  var dd=document.getElementById('date-display');if(dd)dd.textContent=n.toLocaleDateString('en-AU',{weekday:'short',day:'numeric',month:'short',year:'numeric'});
 }
 updateClock();setInterval(updateClock,1000);
 
 // TABS
-var TITLES={overview:'Overview',todo:'Team To-Do',tickets:'Complaints',bookings:'Bookings & Targets',sms:'SMS Inbox',leads:'Leads Feed',shopify:'Shopify Orders','ai-complaints':'AI Complaint Assistant',training:'Training Hub',leadform:'Internal Lead Form',cancellations:'Cancellations & Reschedules',history:'Change History'};
+var TITLES={overview:'Overview',todo:'Team To-Do',tickets:'Complaints',bookings:'Bookings & Targets',sms:'SMS Inbox',leads:'Leads Feed',shopify:'Shopify Orders','ai-complaints':'AI Complaint Assistant',training:'Training Hub',pipeline:'Pipeline',leadform:'Internal Lead Form',cancellations:'Cancellations & Reschedules',history:'Change History'};
 function showTab(id){
   document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});
   document.querySelectorAll('.nav-item').forEach(function(n){n.classList.remove('active');});
@@ -659,10 +670,15 @@ function saveMembers(){store('team_members',teamMembers);}
 
 // Populate member dropdowns
 function populateMemberDropdowns(){
-  ['task-asgn','filt-asgn'].forEach(function(id){
+  // All dropdowns that need team members
+  var dropdowns={
+    'task-asgn':   '<option value="">Unassigned</option>',
+    'filt-asgn':   '<option value="">All Members</option>',
+    'ov-ta-asgn':  '<option value="">Unassigned</option>'
+  };
+  Object.keys(dropdowns).forEach(function(id){
     var el=document.getElementById(id);if(!el)return;
-    var first=id==='filt-asgn'?'<option value="">All Members</option>':'<option value="">Unassigned</option>';
-    el.innerHTML=first+teamMembers.map(function(m){return '<option value="'+esc(m)+'">'+esc(m)+'</option>';}).join('');
+    el.innerHTML=dropdowns[id]+teamMembers.map(function(m){return '<option value="'+esc(m)+'">'+esc(m)+'</option>';}).join('');
   });
   var disp=document.getElementById('member-list-display');
   if(disp)disp.textContent=teamMembers.join(', ')||'None added yet';
@@ -707,12 +723,51 @@ function addTask(){
 function completeTask(id){
   var t=todos.find(function(x){return x.id===id;});
   if(!t)return;
-  if(confirm('Mark "'+t.text.slice(0,50)+'" as complete and archive it?')){
-    t.completedOn=new Date().toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'});
-    archived.unshift(t);
-    todos=todos.filter(function(x){return x.id!==id;});
-    saveTodos();renderTodos();renderArchive();
-  }
+  // Show choice modal
+  showCompleteModal(id, t.text);
+}
+
+function closeCompleteModal(){var m=document.getElementById("complete-modal");if(m)m.remove();}
+function showCompleteModal(id, text){
+  // Remove any existing modal
+  var existing=document.getElementById('complete-modal');
+  if(existing)existing.remove();
+
+  var modal=document.createElement('div');
+  modal.id='complete-modal';
+  modal.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:9999;display:flex;align-items:center;justify-content:center';
+  modal.innerHTML=
+    '<div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;width:340px;box-shadow:0 20px 60px rgba(0,0,0,.5)">'+
+    '<div style="font-size:14px;font-weight:600;margin-bottom:6px">Complete Task</div>'+
+    '<div style="font-size:12px;color:var(--muted);margin-bottom:20px;line-height:1.5">"'+esc(text.slice(0,80))+'"</div>'+
+    '<div style="display:flex;flex-direction:column;gap:8px">'+
+      '<button onclick="doArchiveTask('+id+')" style="padding:10px 16px;border-radius:8px;border:1px solid var(--border);background:var(--accent);color:#fff;font-family:var(--font);font-size:13px;font-weight:600;cursor:pointer;text-align:left">&#128194; Archive — keep in history</button>'+
+      '<button onclick="doDeleteTask('+id+')" style="padding:10px 16px;border-radius:8px;border:1px solid rgba(240,85,104,.3);background:rgba(240,85,104,.08);color:var(--danger);font-family:var(--font);font-size:13px;font-weight:600;cursor:pointer;text-align:left">&#10005; Delete permanently</button>'+
+      '<button onclick="closeCompleteModal()" style="padding:8px 16px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--muted);font-family:var(--font);font-size:12px;cursor:pointer">Cancel</button>'+
+    '</div>'+
+    '</div>';
+  document.body.appendChild(modal);
+  // Close on backdrop click
+  modal.addEventListener('click',function(e){if(e.target===modal)modal.remove();});
+}
+
+function doArchiveTask(id){
+  var t=todos.find(function(x){return x.id===id;});
+  if(!t)return;
+  t.completedOn=new Date().toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'});
+  archived.unshift(t);
+  todos=todos.filter(function(x){return x.id!==id;});
+  saveTodos();renderTodos();renderArchive();renderOverview();
+  var modal=document.getElementById('complete-modal');if(modal)modal.remove();
+  logAction('task','Archived task: "'+t.text.slice(0,60)+'"');
+}
+
+function doDeleteTask(id){
+  var t=todos.find(function(x){return x.id===id;});
+  todos=todos.filter(function(x){return x.id!==id;});
+  saveTodos();renderTodos();renderOverview();
+  var modal=document.getElementById('complete-modal');if(modal)modal.remove();
+  if(t)logAction('task','Deleted task: "'+t.text.slice(0,60)+'"');
 }
 
 function deleteTask(id){
@@ -825,7 +880,7 @@ renderTodos();
 
 
 // TARGET TRACKER
-function saveTarget(val){store('bk_target',parseInt(val)||0);}
+function saveTarget(val){store('bk_target',parseInt(val)||0);try{renderTarget();}catch(e){}}
 
 function renderTarget(){
   var body=document.getElementById('target-tracker-body');
@@ -836,12 +891,11 @@ function renderTarget(){
   if(inp&&!inp.value&&target)inp.value=target;
 
   if(!target){
-    body.innerHTML='<div style="text-align:center;color:var(--muted);font-size:13px;padding:8px">Set a monthly bookings target above to track progress</div>';
+    if(body)body.innerHTML='<div style="text-align:center;color:var(--muted);font-size:13px;padding:8px">Set a monthly bookings target above to track progress</div>';
     return;
   }
 
-  var total=parseInt((document.getElementById('ov-bk-b')||{}).textContent)||0;
-  // Get from last fetch
+  var total=0;
   if(window._bkData)total=window._bkData.total_bookings||0;
 
   var pct=Math.min(Math.round((total/target)*100),100);
@@ -928,7 +982,7 @@ function renderTarget(){
   html+='</div>';
 
   html+='</div>';
-  body.innerHTML=html;
+  if(body)body.innerHTML=html;
 }
 
 // TICKETS
@@ -945,7 +999,7 @@ function updateTkStat(id,val){var t=tickets.find(function(x){return x.id===id;})
 function deleteTk(id){if(confirm('Delete this complaint?')){tickets=tickets.filter(function(x){return x.id!==id;});saveTickets();renderTickets();}}
 function renderTickets(){
   var tbody=document.getElementById('ticket-tbody'),empty=document.getElementById('ticket-empty');
-  document.getElementById('ticket-count').textContent=tickets.length+' ticket'+(tickets.length!==1?'s':'');
+  var tcEl=document.getElementById('ticket-count');if(tcEl)tcEl.textContent=tickets.length+' ticket'+(tickets.length!==1?'s':'');
   if(!tickets.length){tbody.innerHTML='';empty.style.display='block';return;}
   empty.style.display='none';
   tbody.innerHTML=tickets.map(function(t,i){
@@ -970,7 +1024,7 @@ renderTickets();
 var curMonth=(function(){var n=new Date();return n.getFullYear()+'-'+String(n.getMonth()+1).padStart(2,'0');})();
 function updateMonthDisp(){
   var p=curMonth.split('-'),d=new Date(parseInt(p[0]),parseInt(p[1])-1,1);
-  document.getElementById('month-display').textContent=d.toLocaleDateString('en-AU',{month:'long',year:'numeric'});
+  var mdEl=document.getElementById('month-display');if(mdEl)mdEl.textContent=d.toLocaleDateString('en-AU',{month:'long',year:'numeric'});
   var n=new Date(),c=n.getFullYear()+'-'+String(n.getMonth()+1).padStart(2,'0');
   document.getElementById('month-next-btn').style.opacity=curMonth>=c?'0.35':'1';
 }
@@ -985,9 +1039,9 @@ async function fetchBookings(){
       '<div class="stat green"><div class="stat-label">Total Bookings</div><div class="stat-val">'+(data.total_bookings||0)+'</div><div class="stat-sub">'+(data.month_label||'')+'</div></div>'+
       '<div class="stat purple"><div class="stat-label">Quotes Sent</div><div class="stat-val">'+(data.total_quotes||0)+'</div><div class="stat-sub">'+(data.month_label||'')+'</div></div>'+
       '<div class="stat info"><div class="stat-label">Active Staff</div><div class="stat-val">'+((data.rows||[]).length)+'</div><div class="stat-sub">with activity</div></div>';
-    document.getElementById('bk-month-lbl').textContent=data.month_label||'';
+    var bkLbl=document.getElementById('bk-month-lbl');if(bkLbl)bkLbl.textContent=data.month_label||'';
     window._bkData=data;
-    renderTarget();
+    try{renderTarget();}catch(e){console.log('renderTarget err',e);}
     var rows=data.rows||[],max=rows.reduce(function(m,r){return Math.max(m,r.total);},1);
     var tbody=document.getElementById('bk-tbody');
     if(!rows.length){tbody.innerHTML='<tr><td colspan="6" style="padding:32px;text-align:center;color:var(--muted)">No data for '+(data.month_label||curMonth)+'</td></tr>';return;}
@@ -1062,7 +1116,7 @@ async function fetchLeads(){
     if(data.error){alert('Leads error: '+data.error);return;}
     var feed=document.getElementById('leads-feed'),leads=data.leads||data.rows||[];
     var tc=data.today_count!==undefined?data.today_count:leads.length;
-    document.getElementById('ov-leads').textContent=tc;
+    var olEl=document.getElementById('ov-leads');if(olEl)olEl.textContent=tc;
     window._leadsData=data;
     if(!leads.length){feed.innerHTML='<div class="es">No leads today yet.</div>';return;}
     feed.innerHTML=leads.map(function(l){
@@ -1077,21 +1131,86 @@ async function fetchLeads(){
 }
 
 // SHOPIFY
+var shopifyScriptUrl = '';
+
 async function fetchShopify(){
-  var url=load('url_shopify','');if(!url){alert('Paste your Shopify proxy URL first.');return;}
+  var url=load('url_shopify','');
+  if(!url){alert('Paste your Shopify Apps Script URL first.');return;}
+  shopifyScriptUrl = url;
   var spin=document.getElementById('sh-spin');spin.classList.add('spinning');
   try{
-    var res=await fetch(url),data=await res.json();
-    var orders=data.orders||data.rows||[];
-    var uf=orders.filter(function(o){return (o.status||'').toLowerCase()!=='fulfilled';}).length;
-    var ovUF=document.getElementById('ov-sh-u'),ovT=document.getElementById('ov-sh-t');
-    if(ovUF)ovUF.textContent=uf;if(ovT)ovT.textContent=orders.length;
+    var res=await fetch(url);var data=await res.json();
+    if(data.error){alert('Shopify error: '+data.error);return;}
+    var orders=data.orders||[];
+    var counts=data.counts||{};
+
+    // Update stat cards
+    var sNew=document.getElementById('sh-new');
+    var sFul=document.getElementById('sh-fulfilled');
+    var sIns=document.getElementById('sh-install');
+    if(sNew)sNew.textContent=counts['New Order']||0;
+    if(sFul)sFul.textContent=counts['Fulfilled']||0;
+    if(sIns)sIns.textContent=counts['Request Install']||0;
+
+    // Update overview shopify cards
+    var ovUF=document.getElementById('ov-sh-u');
+    var ovT=document.getElementById('ov-sh-t');
+    if(ovUF)ovUF.textContent=(counts['New Order']||0)+(counts['Request Install']||0);
+    if(ovT)ovT.textContent=orders.length;
+
     checkNew('shopify',data);
-    document.getElementById('sh-tbody').innerHTML=orders.map(function(o){
-      return '<tr><td style="font-family:var(--mono)">#'+esc(o.order_number||o.id||'')+'</td><td style="font-weight:600">'+esc(o.customer||o.customer_name||'')+'</td><td>'+esc(o.items||o.line_items||'')+'</td><td style="font-family:var(--mono)">'+esc(o.total||o.total_price||'')+'</td><td><span class="bdg '+((o.status||'').toLowerCase()==='fulfilled'?'fulfilled':'unfulfilled')+'">'+esc(o.status||'Unfulfilled')+'</span></td><td style="color:var(--muted);font-size:11px">'+esc(o.date||o.created_at||'')+'</td></tr>';
+
+    var tbody=document.getElementById('sh-tbody');
+    if(!orders.length){
+      tbody.innerHTML='<tr><td colspan="4" style="padding:32px;text-align:center;color:var(--muted)">No orders found.</td></tr>';
+      return;
+    }
+
+    var STATUS_COLORS={
+      'New Order':       'background:rgba(91,156,246,.12);color:var(--info);border:1px solid rgba(91,156,246,.3)',
+      'Fulfilled':       'background:rgba(79,195,161,.12);color:var(--success);border:1px solid rgba(79,195,161,.3)',
+      'Request Install': 'background:rgba(240,160,80,.12);color:var(--warn);border:1px solid rgba(240,160,80,.3)'
+    };
+
+    tbody.innerHTML=orders.map(function(o){
+      var statusStyle=STATUS_COLORS[o.status]||STATUS_COLORS['New Order'];
+      return '<tr>'+
+        '<td style="font-family:var(--mono);font-weight:600">'+esc(o.order_number||'')+'</td>'+
+        '<td style="font-weight:600">'+esc(o.customer||'')+'</td>'+
+        '<td style="color:var(--muted);font-size:11px;font-family:var(--mono)">'+esc(o.date||'')+'</td>'+
+        '<td>'+
+          '<select data-row="'+o.row+'" onchange="updateShopifyStatus(this)" style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:4px 8px;color:var(--text);font-family:var(--font);font-size:11px;outline:none;cursor:pointer">'+
+            '<option value="New Order"'+(o.status==='New Order'?' selected':'')+'>New Order</option>'+
+            '<option value="Fulfilled"'+(o.status==='Fulfilled'?' selected':'')+'>Fulfilled</option>'+
+            '<option value="Request Install"'+(o.status==='Request Install'?' selected':'')+'>Request Install</option>'+
+          '</select>'+
+        '</td>'+
+      '</tr>';
     }).join('');
+
   }catch(e){alert('Could not load Shopify orders.\n\n'+e.message);}
   finally{spin.classList.remove('spinning');}
+}
+
+async function updateShopifyStatus(sel){
+  var row    = parseInt(sel.getAttribute('data-row'));
+  var status = sel.value;
+  var url    = load('url_shopify','');
+  if(!url)return;
+  try{
+    var res = await fetch(url, {
+      method: 'POST',
+      body: JSON.stringify({ row: row, status: status }),
+      headers: { 'Content-Type': 'application/json' }
+    });
+    var data = await res.json();
+    if(data.error){ alert('Could not update status: '+data.error); return; }
+    logAction('other','Shopify order row '+row+' status updated to: '+status);
+    // Refresh stats
+    fetchShopify();
+  }catch(e){
+    alert('Could not update status.\n\n'+e.message);
+  }
 }
 
 // AI COMPLAINTS
@@ -1114,7 +1233,8 @@ async function analyseComplaint(){
 }
 function clearComplaint(){document.getElementById('ai-text').value='';document.getElementById('ai-ctx').value='';document.getElementById('ai-out').style.display='none';document.getElementById('ai-think').style.display='none';}
 function renderHistory(){
-  var el=document.getElementById('hist-list');document.getElementById('hist-count').textContent=cHistory.length+' saved';
+  var el=document.getElementById('hist-list');var hc=document.getElementById('hist-count');if(hc)hc.textContent=cHistory.length+' saved';
+  if(!el)return;
   if(!cHistory.length){el.innerHTML='<div class="es" style="padding:20px">No history yet.</div>';return;}
   el.innerHTML=cHistory.map(function(h){
     return '<div class="hist-item" onclick="loadHist('+h.id+')"><div style="font-size:12px;font-weight:600;margin-bottom:4px;display:flex;justify-content:space-between"><span>'+esc(h.context||'Complaint')+'</span><span style="color:var(--muted);font-size:10px;font-family:var(--mono)">'+h.date+'</span></div><div style="font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+esc(h.complaint)+'</div></div>';
@@ -1131,8 +1251,8 @@ function focusKB(){showTab('training');setTimeout(function(){document.getElement
 function updateBadges(){
   var p=todos.filter(function(t){return !t.done;}).length;
   var o=tickets.filter(function(t){return t.status!=='resolved';}).length;
-  document.getElementById('todo-badge').textContent=p;
-  document.getElementById('ticket-badge').textContent=o;
+  var tbEl=document.getElementById('todo-badge');if(tbEl)tbEl.textContent=p;
+  var tkEl=document.getElementById('ticket-badge');if(tkEl)tkEl.textContent=o;
 }
 function renderOverview(){
   updateBadges();
@@ -1207,9 +1327,29 @@ function renderOverview(){
     }
   }
 }
-function showOvTA(){var f=document.getElementById('ov-ta-form');f.style.display='block';setTimeout(function(){document.getElementById('ov-ta-inp').focus();},50);}
-function hideOvTA(){document.getElementById('ov-ta-form').style.display='none';document.getElementById('ov-ta-inp').value='';}
-function addOvTA(){var inp=document.getElementById('ov-ta-inp'),t=inp.value.trim();if(!t)return;todos.unshift({id:Date.now(),text:t,assignee:'',due:'',priority:'normal',done:false,created:new Date().toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'})});saveTodos();renderTodos();hideOvTA();renderOverview();}
+function showOvTA(){
+  var f=document.getElementById('ov-ta-form');f.style.display='block';
+  // Populate member dropdown from saved team members
+  var sel=document.getElementById('ov-ta-asgn');
+  if(sel){sel.innerHTML='<option value="">Unassigned</option>'+teamMembers.map(function(m){return '<option value="'+esc(m)+'">'+esc(m)+'</option>';}).join('');}
+  setTimeout(function(){document.getElementById('ov-ta-inp').focus();},50);
+}
+function hideOvTA(){
+  document.getElementById('ov-ta-form').style.display='none';
+  document.getElementById('ov-ta-inp').value='';
+  var due=document.getElementById('ov-ta-due');if(due)due.value='';
+  var pri=document.getElementById('ov-ta-priority');if(pri)pri.value='normal';
+  var asgn=document.getElementById('ov-ta-asgn');if(asgn)asgn.value='';
+}
+function addOvTA(){
+  var inp=document.getElementById('ov-ta-inp');
+  var t=inp.value.trim();if(!t)return;
+  var asgn=(document.getElementById('ov-ta-asgn')||{}).value||'';
+  var due=(document.getElementById('ov-ta-due')||{}).value||'';
+  var pri=(document.getElementById('ov-ta-priority')||{}).value||'normal';
+  todos.unshift({id:Date.now(),text:t,assignee:asgn,due:due,priority:pri,done:false,created:new Date().toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'})});
+  saveTodos();renderTodos();hideOvTA();renderOverview();
+}
 function showOvTK(){var f=document.getElementById('ov-tk-form');f.style.display='block';setTimeout(function(){document.getElementById('ov-tk-name').focus();},50);}
 function hideOvTK(){document.getElementById('ov-tk-form').style.display='none';document.getElementById('ov-tk-name').value='';document.getElementById('ov-tk-svc').value='';document.getElementById('ov-tk-desc').value='';}
 function addOvTK(){var n=document.getElementById('ov-tk-name').value.trim(),s=document.getElementById('ov-tk-svc').value.trim(),d=document.getElementById('ov-tk-desc').value.trim();if(!n||!d){alert('Please fill in customer name and description.');return;}tickets.unshift({id:Date.now(),name:n,service:s,desc:d,status:'open',date:new Date().toLocaleDateString('en-AU',{day:'numeric',month:'short'})});saveTickets();renderTickets();hideOvTK();renderOverview();}
@@ -1419,7 +1559,7 @@ function saveCurrentUser(){
   var v=document.getElementById('current-user-inp').value.trim();
   if(!v)return;
   currentUser=v;store('current_user',v);
-  document.getElementById('current-user-display').textContent='Logged in as: '+v;
+  var cudEl=document.getElementById('current-user-display');if(cudEl)cudEl.textContent='Logged in as: '+v;
   document.getElementById('current-user-inp').value='';
 }
 
@@ -1591,7 +1731,8 @@ var _URLS = {
   bookings:    'https://script.google.com/macros/s/AKfycbxN7Z-0EDrT811faJ7kZdweGEKsZQb6SbDg8BXDGmPAtMnoofwrzTBhAimVKhwRK9yj/exec',
   sms:         'https://script.google.com/macros/s/AKfycbypd-W0_zBfPoAy9ntXETTgxzQbc96vBUHtNpfADmYLPrtiTA0kgpSk1QsmczMfrgkg/exec',
   leads:       'https://script.google.com/macros/s/AKfycbyMz6-sY1hIuX-QeO54Fe2cogSEHaw3KdtBpxmg4QIc2QJO4bdMCRuQHq-mEPFBdJK4/exec',
-  missedcalls: 'https://script.google.com/macros/s/AKfycbwB_-2FvUf4dZkUEVtXtXLbocPh2u4KvXKMGvuejMxzRBOyzTVx7VaUhTGfrfHyLsI/exec'
+  missedcalls: 'https://script.google.com/macros/s/AKfycbwB_-2FvUf4dZkUEVtXtXLbocPh2u4KvXKMGvuejMxzRBOyzTVx7VaUhTGfrfHyLsI/exec',
+  shopify:     'https://script.google.com/macros/s/AKfycbwIOim2uBpKg3WlLF0g2ap7gtCDuEcisSS1JFMKBcox7p1qh-yEwqjYDFnPDa5BQcnkmA/exec'
 };
 Object.keys(_URLS).forEach(function(k){
   store('url_'+k, _URLS[k]);
@@ -1606,6 +1747,7 @@ setTimeout(function(){ try{fetchBookings();}catch(e){console.log('bookings err',
 setTimeout(function(){ try{fetchSMS();}catch(e){console.log('sms err',e);} }, 1400);
 setTimeout(function(){ try{fetchLeads();}catch(e){console.log('leads err',e);} }, 2200);
 setTimeout(function(){ try{fetchMissedCalls();}catch(e){console.log('mc err',e);} }, 3000);
+setTimeout(function(){ try{fetchShopify();}catch(e){console.log('shopify err',e);} }, 3800);
 </script>
 </body>
 </html>
