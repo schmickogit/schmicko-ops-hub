@@ -1379,7 +1379,7 @@ function filterMissedCalls(){
           '<button data-mcid="'+safeId+'" data-action="'+(isActioned?'unaction':'action')+'" onclick="handleMCBtn(this)" style="background:transparent;border:1px solid var(--border);border-radius:5px;padding:3px 8px;font-size:10px;color:var(--muted);cursor:pointer;font-family:var(--font);white-space:nowrap">'+(isActioned?'Undo':'Mark actioned')+'</button>'+
         '</div>'+
       '</div>'+
-      (hasVM?'<div style="margin-top:4px"><span style="font-size:11px;color:var(--warn)">&#128231; Transcript sent to email</span></div>':'')+
+      (hasVM?'<div style="margin-top:6px"><a href="https://zoom.us/pbx/page/telephone/callLog#/voicemail-list?from=2026-4-25&to=2026-5-1&page_number=1&page_size=15&pt=&tab=regular" target="_blank" style="font-size:11px;color:var(--accent);text-decoration:none">&#128222; View in Zoom Voicemail Log &#8599;</a></div>':'')+
     '</div>';
   }
   function handleMCBtn(btn){
