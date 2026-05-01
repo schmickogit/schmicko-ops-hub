@@ -1064,7 +1064,7 @@ function renderOverview(){
   var ovVMFeed=document.getElementById('ov-vm-feed');
   var mcBadge=document.getElementById('ov-mc-pending-badge');
   var vmBadge=document.getElementById('ov-vm-pending-badge');
-  if(allMissedCalls.length){
+  if(allMissedCalls&&allMissedCalls.length){
     var pendingMC=allMissedCalls.filter(function(c){return c.type==='Missed Call'&&!mcActioned[mcKey(c)];});
     var pendingVM=allMissedCalls.filter(function(c){return c.type==='Voicemail'&&!mcActioned[mcKey(c)];});
     if(mcBadge)mcBadge.textContent=pendingMC.length;
@@ -1475,10 +1475,11 @@ Object.keys(_URLS).forEach(function(k){
 renderHistoryLog();
 
 // Auto-fetch all live feeds on page load
-setTimeout(function(){ fetchBookings(); }, 500);
-setTimeout(function(){ fetchSMS(); }, 1200);
-setTimeout(function(){ fetchLeads(); }, 1900);
-setTimeout(function(){ fetchMissedCalls(); }, 2600);
+function safeRenderOverview(){try{renderOverview();}catch(e){console.log('renderOverview error:',e);}}
+setTimeout(function(){ try{fetchBookings();}catch(e){console.log('bookings err',e);} }, 600);
+setTimeout(function(){ try{fetchSMS();}catch(e){console.log('sms err',e);} }, 1400);
+setTimeout(function(){ try{fetchLeads();}catch(e){console.log('leads err',e);} }, 2200);
+setTimeout(function(){ try{fetchMissedCalls();}catch(e){console.log('mc err',e);} }, 3000);
 </script>
 </body>
 </html>
