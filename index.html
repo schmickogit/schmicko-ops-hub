@@ -130,18 +130,20 @@ input::placeholder,textarea::placeholder{color:var(--muted)}
     <div class="nav-item" onclick="showTab('todo')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Team To-Do<span class="nav-badge" id="todo-badge">0</span></div>
     <div class="nav-item" onclick="showTab('tickets')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M8 5v3l2 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Complaints<span class="nav-badge" id="ticket-badge">0</span></div>
     <div class="nav-section">Live Feeds</div>
-    <div class="nav-item" onclick="showTab('bookings')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="11" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M2 7h12M5 1v4M11 1v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Bookings<span class="live-dot"></span></div>
+    <div class="nav-item" onclick="showTab('kpi')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="11" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M2 7h12M5 1v4M11 1v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Bookings / KPI<span class="live-dot"></span></div>
+    <div class="nav-item" onclick="showTab('unassigned')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 13c0-2.76 2.24-5 5-5s5 2.24 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12 8l2 2-2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Unassigned<span class="live-dot"></span><span class="nav-badge" id="unassigned-badge">0</span></div>
     <div class="nav-item" onclick="showTab('sms')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 2h12a1 1 0 011 1v7a1 1 0 01-1 1H5l-3 3V3a1 1 0 011-1z" stroke="currentColor" stroke-width="1.5"/></svg>SMS Inbox<span class="live-dot"></span></div>
     <div class="nav-item" onclick="showTab('leads')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2a3 3 0 100 6 3 3 0 000-6zM3 13c0-2.76 2.24-5 5-5s5 2.24 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Leads<span class="live-dot"></span></div>
     <div class="nav-item" onclick="showTab('shopify')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 2h1.5l2 8h7l1.5-5.5H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="13" r="1" fill="currentColor"/><circle cx="11" cy="13" r="1" fill="currentColor"/></svg>Shopify<span class="live-dot"></span></div>
     <div class="nav-section">Tools</div>
+    <div class="nav-item" onclick="showTab('booking-rules')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="13" cy="11" r="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M12 11h2M13 10v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>Booking Rules<span class="nav-badge" id="rules-alert-badge" style="background:var(--danger);display:none">!</span></div>
     <div class="nav-item" onclick="showTab('ai-complaints')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>AI Assist</div>
     <div class="nav-item" onclick="showTab('training')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 1L2 4v4c0 3.3 2.6 6.4 6 7 3.4-.6 6-3.7 6-7V4L8 1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Training</div>
     <div class="nav-section">Admin</div>
     <div class="nav-item" onclick="showTab('missedcalls')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 3l10 10M13 6V3h-3M3 10v3h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Missed Calls<span class="live-dot"></span></div>
+    <div class="nav-item" onclick="showTab('reschedules')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8a6 6 0 1 0 1-3.46" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M2 4v4h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 6v3l2 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Reschedules<span class="nav-badge" id="resched-badge">0</span></div>
     <a href="https://bigin.zoho.com.au/bigin/org7004311948/Home#/deals/kanban/76706000000038571?pipeline=76706000000000631&sub_pipeline=76706000000273003" target="_blank" class="nav-item" style="text-decoration:none"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="4" height="10" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="6" y="1" width="4" height="12" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="5" width="4" height="8" rx="1" stroke="currentColor" stroke-width="1.5"/></svg>Pipeline &#8599;</a>
     <div class="nav-item" onclick="showTab('leadform')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 2h12v12H2zM2 6h12M6 6v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Lead Form</div>
-    <div class="nav-item" onclick="showTab('cancellations')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M5 8h6M8 5v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Cancel / Reschedule</div>
     <div class="nav-item" onclick="showTab('history')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 3v5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M2 8a6 6 0 1 0 1-3.46" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M2 4v4h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Change History</div>
   </nav>
   <div class="sidebar-footer">
@@ -166,7 +168,7 @@ input::placeholder,textarea::placeholder{color:var(--muted)}
     <div class="tab-panel active" id="tab-overview">
       <!-- Top row: 5 snapshot cards -->
       <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:16px">
-        <div class="card" style="margin-bottom:0;cursor:pointer" onclick="showTab('bookings')">
+        <div class="card" style="margin-bottom:0;cursor:pointer" onclick="showTab('kpi')">
           <div class="card-header" style="padding:10px 14px"><div class="card-title" style="font-size:12px">Bookings</div><span class="live-dot"></span></div>
           <div class="card-body" style="padding:10px 14px">
             <div style="display:flex;justify-content:space-between;margin-bottom:6px">
@@ -210,6 +212,13 @@ input::placeholder,textarea::placeholder{color:var(--muted)}
             <div style="font-size:10px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis" id="ov-tk-latest">No open complaints</div>
           </div>
         </div>
+      </div>
+
+      <!-- Reschedule risk alert banner -->
+      <div id="resched-risk-banner" style="display:none;margin-bottom:16px;padding:12px 16px;background:rgba(240,160,80,.1);border:1px solid rgba(240,160,80,.35);border-radius:10px;align-items:center;gap:12px">
+        <span style="font-size:20px">⚠️</span>
+        <div style="flex:1"><span style="font-weight:600;color:var(--warn)">Reliability Risk: </span><span id="resched-risk-msg" style="font-size:13px;color:var(--text)">High technician-initiated reschedules this month.</span></div>
+        <button class="rbtn" onclick="showTab('reschedules')">View Details →</button>
       </div>
 
       <!-- Complaint quick-add form -->
@@ -371,38 +380,8 @@ input::placeholder,textarea::placeholder{color:var(--muted)}
       </div>
     </div>
 
-    <!-- BOOKINGS -->
-    <div class="tab-panel" id="tab-bookings">
-      <div class="sh">
-        <div><div class="sh-title">Bookings &amp; Targets</div><div class="sh-sub">Monthly team tally</div></div>
-        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-          <button class="rbtn" onclick="changeMonth(-1)">&#8592; Prev</button>
-          <span id="month-display" style="font-size:13px;font-weight:600;min-width:130px;text-align:center;color:var(--text)"></span>
-          <button class="rbtn" id="month-next-btn" onclick="changeMonth(1)">Next &#8594;</button>
-          <button class="rbtn" onclick="fetchBookings()"><span id="bk-spin">&#8635;</span> Refresh</button>
-        </div>
-      </div>
-      <div class="cfg"><div class="cfg-title">Google Apps Script Setup</div><div class="cfg-text">Deploy <code>bookings_script.gs</code> from your bookings sheet and paste the URL below.</div><div style="margin-top:10px"><div class="urow"><label>Web App URL</label><input type="text" id="bookings-url" placeholder="https://script.google.com/macros/s/..." oninput="saveUrl('bookings',this.value)"><button class="btn sm" onclick="fetchBookings()">Connect</button></div></div></div>
-      <div class="g3" id="bk-stats" style="margin-bottom:16px"><div class="stat green"><div class="stat-label">Total Bookings</div><div class="stat-val">--</div><div class="stat-sub">this month</div></div><div class="stat purple"><div class="stat-label">Quotes Sent</div><div class="stat-val">--</div><div class="stat-sub">this month</div></div><div class="stat info"><div class="stat-label">Active Staff</div><div class="stat-val">--</div><div class="stat-sub">with activity</div></div></div>
-      <!-- TARGET TRACKER -->
-      <div class="card" style="margin-bottom:16px">
-        <div class="card-header">
-          <div class="card-title">&#127919; Monthly Target Tracker</div>
-          <div style="display:flex;align-items:center;gap:8px">
-            <span style="font-size:11px;color:var(--muted)">Target:</span>
-            <input type="number" id="bk-target" min="1" placeholder="e.g. 50"
-              style="width:80px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:5px 8px;color:var(--text);font-family:var(--mono);font-size:13px;outline:none;text-align:center"
-              oninput="saveTarget(this.value);renderTarget()">
-            <span style="font-size:11px;color:var(--muted)">bookings/month</span>
-          </div>
-        </div>
-        <div class="card-body" id="target-tracker-body">
-          <div style="text-align:center;color:var(--muted);font-size:13px;padding:8px">Set a monthly bookings target above to track progress</div>
-        </div>
-      </div>
-
-      <div class="card"><div class="card-header"><div class="card-title">Team Breakdown</div><span id="bk-month-lbl" style="font-size:12px;color:var(--muted)"></span></div><div class="card-body" style="padding:0"><table class="ttable" style="width:100%"><thead><tr><th style="width:32px">#</th><th>Staff Member</th><th style="text-align:center">Bookings</th><th style="text-align:center">Quotes Sent</th><th style="text-align:center">Total</th></tr></thead><tbody id="bk-tbody"><tr><td colspan="6" style="padding:32px;text-align:center;color:var(--muted)">Connect your Google Sheet above</td></tr></tbody></table></div></div>
-    </div>
+    <!-- BOOKINGS → redirects to KPI tab (merged) -->
+    <div class="tab-panel" id="tab-bookings" style="display:none"></div>
 
     <!-- SMS -->
     <div class="tab-panel" id="tab-sms">
@@ -514,64 +493,530 @@ input::placeholder,textarea::placeholder{color:var(--muted)}
       </div>
     </div>
 
-    <!-- CANCELLATIONS & RESCHEDULES -->
-    <div class="tab-panel" id="tab-cancellations">
+    <!-- UNASSIGNED BOOKINGS -->
+    <div class="tab-panel" id="tab-unassigned">
       <div class="sh">
-        <div><div class="sh-title">Cancellations &amp; Reschedules</div><div class="sh-sub">Track all cancellations and reschedule requests</div></div>
-        <button class="btn sm" onclick="openCancelForm()">+ Add Entry</button>
+        <div><div class="sh-title">Unassigned Bookings</div><div class="sh-sub">Live feed from Booking Koala — bookings with no technician assigned yet</div></div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <span id="ua-last-sync" style="font-size:11px;color:var(--muted)"></span>
+          <button class="rbtn" onclick="fetchUnassigned()"><span id="ua-spin">↻</span> Refresh</button>
+        </div>
+      </div>
+      <div class="cfg">
+        <div class="cfg-title">Booking Koala → Google Sheet Setup</div>
+        <div class="cfg-text">In your Booking Koala → Google Sheet integration, add a column <code>assigned_to</code> (blank = unassigned). Deploy an Apps Script that returns rows where <code>assigned_to</code> is empty. Paste that URL below. The script should return: <code>{bookings:[{id, customer_name, service, booking_date, suburb, created_at, notes}]}</code>.<br><br>Alternatively, use your existing <strong style="color:var(--text)">bookings URL</strong> with <code>?action=unassigned</code> if your script supports it.</div>
+        <div style="margin-top:10px"><div class="urow"><label>Web App URL</label><input type="text" id="unassigned-url" placeholder="https://script.google.com/macros/s/..." oninput="saveUrl('unassigned',this.value)"><button class="btn sm" onclick="fetchUnassigned()">Connect</button></div></div>
       </div>
 
-      <!-- Add Entry Form -->
-      <div id="cancel-form" style="display:none" class="card">
-        <div class="card-header"><div class="card-title">New Entry</div><button class="rbtn" onclick="closeCancelForm()">Cancel</button></div>
+      <!-- Stats -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px">
+        <div class="stat danger"><div class="stat-label">Unassigned</div><div class="stat-val" id="ua-count">--</div><div class="stat-sub">need assigning now</div></div>
+        <div class="stat warn"><div class="stat-label">Today</div><div class="stat-val" id="ua-today">--</div><div class="stat-sub">bookings today</div></div>
+        <div class="stat info"><div class="stat-label">Tomorrow</div><div class="stat-val" id="ua-tomorrow">--</div><div class="stat-sub">bookings tomorrow</div></div>
+        <div class="stat purple"><div class="stat-label">This Week</div><div class="stat-val" id="ua-week">--</div><div class="stat-sub">total this week</div></div>
+      </div>
+
+      <!-- Alert banner for urgent unassigned -->
+      <div id="ua-alert" style="display:none;margin-bottom:14px;padding:12px 16px;background:rgba(240,85,104,.1);border:1px solid rgba(240,85,104,.3);border-radius:10px;display:flex;align-items:center;gap:12px">
+        <span style="font-size:22px">🚨</span>
+        <div><strong style="color:var(--danger)" id="ua-alert-msg">Bookings need assigning today!</strong><div style="font-size:12px;color:var(--muted);margin-top:2px">Assign before end of day to avoid missed appointments.</div></div>
+      </div>
+
+      <!-- Filter -->
+      <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;align-items:center">
+        <div style="position:relative;flex:1;min-width:180px">
+          <input type="text" id="ua-search" class="iput" style="width:100%;padding-left:30px" placeholder="Search customer or service..." oninput="filterUnassigned()">
+          <svg style="position:absolute;left:10px;top:50%;transform:translateY(-50%);opacity:.4;pointer-events:none" width="13" height="13" viewBox="0 0 16 16" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="currentColor" stroke-width="1.5"/><path d="M10 10l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <button class="rbtn" id="ua-fall" onclick="setUAFilter('all')" style="border-color:var(--accent);color:var(--accent)">All</button>
+        <button class="rbtn" id="ua-ftoday" onclick="setUAFilter('today')">📅 Today</button>
+        <button class="rbtn" id="ua-ftomorrow" onclick="setUAFilter('tomorrow')">📅 Tomorrow</button>
+        <button class="rbtn" id="ua-fweek" onclick="setUAFilter('week')">This Week</button>
+        <span id="ua-count-lbl" style="font-size:11px;color:var(--muted)"></span>
+      </div>
+
+      <!-- Table -->
+      <div class="card">
+        <div class="card-body" style="padding:0">
+          <table class="ttable" style="width:100%">
+            <thead><tr><th>Customer</th><th>Service</th><th>Booking Date</th><th>Suburb</th><th>Notes</th><th>Days Until</th><th>Action</th></tr></thead>
+            <tbody id="ua-tbody"></tbody>
+          </table>
+          <div id="ua-empty" class="es">No unassigned bookings found — all good! ✅</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOKING FOLLOW-UP RULES -->
+    <div class="tab-panel" id="tab-booking-rules">
+      <div class="sh">
+        <div><div class="sh-title">Booking Follow-Up Rules</div><div class="sh-sub">Auto-generate To-Do tasks when booking form answers match your conditions</div></div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <button class="rbtn" onclick="runRulesNow()">▶ Run Rules Now</button>
+          <button class="btn sm" onclick="openRuleForm()">+ Add Rule</button>
+        </div>
+      </div>
+
+      <div class="cfg">
+        <div class="cfg-title">⚡ How Booking Rules Work</div>
+        <div class="cfg-text">
+          Your bookings script returns all customer form answers (e.g. Dash Cam Brand, Parking Notes, Car Condition, etc.) as columns in your sheet. Rules scan every new booking and — if the answer matches your condition — automatically add a task to the Team To-Do list, assigned to whoever you specify.<br><br>
+          <strong style="color:var(--text)">Example:</strong> Field <code>dash_cam_brand</code> → Condition <code>equals "Other"</code> → Task: <code>"Follow up: confirm customer's dash cam model before booking"</code> → Assign to <code>Sarah</code><br><br>
+          Rules run automatically whenever bookings refresh. Click <strong style="color:var(--text)">Run Rules Now</strong> to force a check.
+        </div>
+      </div>
+
+      <!-- Triggered tasks alert -->
+      <div id="rules-triggered-banner" style="display:none;margin-bottom:14px;padding:12px 16px;background:rgba(240,160,80,.1);border:1px solid rgba(240,160,80,.3);border-radius:10px">
+        <strong style="color:var(--warn)">⚡ <span id="rules-triggered-count">0</span> tasks auto-generated</strong>
+        <span style="font-size:12px;color:var(--muted);margin-left:8px">from the last rules run — check your To-Do list</span>
+      </div>
+
+      <!-- Add Rule Form -->
+      <div id="rule-form" style="display:none" class="card">
+        <div class="card-header"><div class="card-title">New Rule</div><button class="rbtn" onclick="closeRuleForm()">Cancel</button></div>
         <div class="card-body">
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:12px">
-            <div class="fi"><label>Customer Name</label><input type="text" id="cx-name" class="iput" style="width:100%" placeholder="e.g. Jane Smith"></div>
-            <div class="fi"><label>Service Category</label>
-              <select id="cx-service" style="background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:8px 10px;color:var(--text);font-family:var(--font);font-size:13px;outline:none;width:100%">
-                <option value="">Select service...</option>
-                <option>Car Detailing</option>
-                <option>Roof Lining</option>
-                <option>Dash Cam</option>
-                <option>Tinting</option>
+            <div class="fi"><label>Booking Field Name</label>
+              <input type="text" id="rule-field" class="iput" style="width:100%" placeholder="e.g. dash_cam_brand, parking_type, car_condition">
+              <span style="font-size:10px;color:var(--muted);margin-top:2px">Must match the column header in your sheet exactly</span>
+            </div>
+            <div class="fi"><label>Condition</label>
+              <select id="rule-condition" style="background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:8px 10px;color:var(--text);font-family:var(--font);font-size:13px;outline:none;width:100%">
+                <option value="equals">equals (exact match)</option>
+                <option value="contains">contains (partial)</option>
+                <option value="not_empty">is not empty (any answer)</option>
+                <option value="is_empty">is empty (no answer)</option>
+                <option value="not_equals">does not equal</option>
               </select>
             </div>
-            <div class="fi"><label>Provider Name</label><input type="text" id="cx-provider" class="iput" style="width:100%" placeholder="e.g. ABC Detailing Co"></div>
-            <div class="fi"><label>Technician Penalty</label>
-              <input type="text" id="cx-penalty" class="iput" style="width:100%" placeholder="e.g. $50 deduction, written warning...">
+            <div class="fi"><label>Match Value</label>
+              <input type="text" id="rule-value" class="iput" style="width:100%" placeholder="e.g. Other, Street parking, Poor">
+              <span style="font-size:10px;color:var(--muted);margin-top:2px">Leave blank if condition is is/not empty</span>
             </div>
-            <div class="fi"><label>Date</label><input type="date" id="cx-date" style="background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:8px 10px;color:var(--text);font-family:var(--font);font-size:13px;outline:none;width:100%"></div>
-            <div class="fi"><label>Type</label>
-              <select id="cx-type" style="background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:8px 10px;color:var(--text);font-family:var(--font);font-size:13px;outline:none;width:100%">
-                <option value="Cancellation">Cancellation</option>
-                <option value="Reschedule">Reschedule</option>
+            <div class="fi" style="grid-column:1/-1"><label>Task to Create</label>
+              <input type="text" id="rule-task" class="iput" style="width:100%" placeholder="e.g. Follow up: confirm dash cam model for {customer_name} booking on {booking_date}">
+              <span style="font-size:10px;color:var(--muted);margin-top:2px">Use <code style="font-size:10px;color:var(--accent)">{customer_name}</code> <code style="font-size:10px;color:var(--accent)">{service}</code> <code style="font-size:10px;color:var(--accent)">{booking_date}</code> as dynamic placeholders</span>
+            </div>
+            <div class="fi"><label>Assign To</label>
+              <select id="rule-assign" style="background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:8px 10px;color:var(--text);font-family:var(--font);font-size:13px;outline:none;width:100%">
+                <option value="">Unassigned</option>
               </select>
             </div>
-            <div class="fi" style="grid-column:1/-1"><label>Reason</label><textarea id="cx-reason" style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:8px 10px;color:var(--text);font-family:var(--font);font-size:13px;outline:none;resize:vertical;min-height:70px" placeholder="Describe the reason..."></textarea></div>
+            <div class="fi"><label>Priority</label>
+              <select id="rule-priority" style="background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:8px 10px;color:var(--text);font-family:var(--font);font-size:13px;outline:none;width:100%">
+                <option value="normal">Normal</option><option value="high">High</option><option value="urgent">Urgent</option>
+              </select>
+            </div>
+            <div class="fi"><label>Due Days After Booking</label>
+              <input type="number" id="rule-due-days" class="iput" style="width:100%" placeholder="e.g. 1 (due next day)" min="0" value="1">
+            </div>
           </div>
-          <div style="display:flex;justify-content:flex-end"><button class="btn" onclick="addCancelEntry()">Save Entry</button></div>
+          <!-- Preview -->
+          <div style="padding:10px;background:var(--surface2);border:1px solid var(--border);border-radius:7px;margin-bottom:12px">
+            <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px">Rule Preview</div>
+            <div style="font-size:12px;color:var(--text)">IF <span style="color:var(--accent);font-family:var(--mono)" id="rule-preview-field">field</span> <span style="color:var(--warn)" id="rule-preview-cond">equals</span> <span style="color:var(--accent2);font-family:var(--mono)" id="rule-preview-val">"value"</span> → Create task: <em id="rule-preview-task" style="color:var(--text)">task description</em> → Assign: <span id="rule-preview-assign">Unassigned</span> · <span id="rule-preview-pri">Normal</span></div>
+          </div>
+          <div style="display:flex;justify-content:flex-end;gap:8px">
+            <button class="btn ghost sm" onclick="closeRuleForm()">Cancel</button>
+            <button class="btn sm" onclick="saveRule()">Save Rule</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Preset rules suggestions -->
+      <div class="card" style="margin-bottom:16px">
+        <div class="card-header"><div class="card-title">⚡ Suggested Rules — Click to Add</div><span style="font-size:11px;color:var(--muted)">Common Schmicko follow-up scenarios</span></div>
+        <div class="card-body" style="display:flex;flex-wrap:wrap;gap:8px" id="preset-rules-list"></div>
+      </div>
+
+      <!-- Active rules table -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Active Rules</div>
+          <span id="rules-count-lbl" style="font-size:12px;color:var(--muted)"></span>
+        </div>
+        <div class="card-body" style="padding:0">
+          <table class="ttable" style="width:100%">
+            <thead><tr><th>Field</th><th>Condition</th><th>Value</th><th>Creates Task</th><th>Assign</th><th>Priority</th><th>Due</th><th>Triggered</th><th></th></tr></thead>
+            <tbody id="rules-tbody"></tbody>
+          </table>
+          <div id="rules-empty" class="es">No rules yet. Click + Add Rule or use a suggestion above.</div>
+        </div>
+      </div>
+
+      <!-- Rule run log -->
+      <div class="card" style="margin-top:16px">
+        <div class="card-header"><div class="card-title">📋 Rule Run Log</div><button class="rbtn" onclick="clearRuleLog()">Clear</button></div>
+        <div class="card-body" style="padding:0;max-height:300px;overflow-y:auto" id="rule-log-body">
+          <div class="es" style="padding:16px">No rules have run yet.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESCHEDULE TRACKER -->
+    <div class="tab-panel" id="tab-reschedules">
+      <div class="sh">
+        <div><div class="sh-title">Reschedule Tracker</div><div class="sh-sub">Track customer vs technician-initiated reschedules — feeds from BK Database sheet</div></div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <button class="rbtn" onclick="fetchReschedules()"><span id="rs-spin">↻</span> Refresh</button>
+          <button class="btn sm" onclick="openReschedForm()">+ Log Reschedule</button>
+        </div>
+      </div>
+
+      <!-- Sheet connection -->
+      <div class="cfg">
+        <div class="cfg-title">Google Sheet — BK Database (Reschedules Tab)</div>
+        <div class="cfg-text">Deploy a Google Apps Script from the <code>Reschedules</code> tab in your BK Database sheet, then paste the URL below. The script should return rows with: date, booking_id, customer_name, service, original_date, new_date, reason, initiated_by (Customer / Technician), technician_name.</div>
+        <div style="margin-top:10px">
+          <div class="urow"><label>Web App URL</label><input type="text" id="reschedules-url" placeholder="https://script.google.com/macros/s/..." oninput="saveUrl('reschedules',this.value)"><button class="btn sm" onclick="fetchReschedules()">Connect</button></div>
+        </div>
+      </div>
+
+      <!-- RISK ALERT -->
+      <div id="rs-risk-alert" style="display:none;margin-bottom:16px;padding:14px 16px;background:rgba(240,85,104,.08);border:1px solid rgba(240,85,104,.3);border-radius:10px">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="font-size:22px">🚨</span>
+          <div>
+            <div style="font-weight:700;color:var(--danger);font-size:13px">High Technician Reschedule Rate — Reliability Risk</div>
+            <div id="rs-risk-detail" style="font-size:12px;color:var(--muted);margin-top:3px">More than 30% of reschedules this month were initiated by technicians. This risks customer trust and cancellations.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats row -->
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:16px">
+        <div class="stat info"><div class="stat-label">Total (Month)</div><div class="stat-val" id="rs-total">--</div><div class="stat-sub">reschedules</div></div>
+        <div class="stat warn"><div class="stat-label">By Technician</div><div class="stat-val" id="rs-tech">--</div><div class="stat-sub">our side</div></div>
+        <div class="stat green"><div class="stat-label">By Customer</div><div class="stat-val" id="rs-cust">--</div><div class="stat-sub">their request</div></div>
+        <div class="stat danger"><div class="stat-label">Tech Rate</div><div class="stat-val" id="rs-tech-pct">--%</div><div class="stat-sub">of total</div></div>
+        <div class="stat purple"><div class="stat-label">This Week</div><div class="stat-val" id="rs-week">--</div><div class="stat-sub">reschedules</div></div>
+      </div>
+
+      <!-- Visual split chart -->
+      <div class="card" style="margin-bottom:16px">
+        <div class="card-header"><div class="card-title">📊 Initiated By — Split</div><span id="rs-month-label" style="font-size:12px;color:var(--muted)"></span></div>
+        <div class="card-body" id="rs-chart-body">
+          <div style="text-align:center;color:var(--muted);font-size:13px;padding:8px">Connect your sheet or add a reschedule to see the breakdown</div>
+        </div>
+      </div>
+
+      <!-- Log form -->
+      <div id="resched-form" style="display:none" class="card">
+        <div class="card-header"><div class="card-title">Log Reschedule</div><button class="rbtn" onclick="closeReschedForm()">Cancel</button></div>
+        <div class="card-body">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:12px">
+            <div class="fi"><label>Customer Name</label><input type="text" id="rs-cname" class="iput" style="width:100%" placeholder="e.g. Jane Smith"></div>
+            <div class="fi"><label>Service</label>
+              <select id="rs-svc" style="background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:8px 10px;color:var(--text);font-family:var(--font);font-size:13px;outline:none;width:100%">
+                <option value="">Select...</option><option>Car Detailing</option><option>Roof Lining</option><option>Dash Cam</option><option>Tinting</option>
+              </select>
+            </div>
+            <div class="fi"><label>Technician Name</label><input type="text" id="rs-tech-name" class="iput" style="width:100%" placeholder="e.g. Mike"></div>
+            <div class="fi"><label>Original Date</label><input type="date" id="rs-orig-date" style="background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:8px 10px;color:var(--text);font-family:var(--font);font-size:13px;outline:none;width:100%"></div>
+            <div class="fi"><label>New Date</label><input type="date" id="rs-new-date" style="background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:8px 10px;color:var(--text);font-family:var(--font);font-size:13px;outline:none;width:100%"></div>
+            <div class="fi"><label>Initiated By</label>
+              <select id="rs-init" style="background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:8px 10px;color:var(--text);font-family:var(--font);font-size:13px;outline:none;width:100%">
+                <option value="Customer">👤 Customer</option>
+                <option value="Technician">🔧 Technician (Us)</option>
+              </select>
+            </div>
+            <div class="fi" style="grid-column:1/-1"><label>Reason</label><textarea id="rs-reason" style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:8px 10px;color:var(--text);font-family:var(--font);font-size:13px;outline:none;resize:vertical;min-height:60px" placeholder="Why was this rescheduled?"></textarea></div>
+          </div>
+          <div style="display:flex;justify-content:flex-end;gap:8px">
+            <button class="btn ghost sm" onclick="closeReschedForm()">Cancel</button>
+            <button class="btn sm" onclick="addReschedEntry()">Save Reschedule</button>
+          </div>
         </div>
       </div>
 
       <!-- Search & filter -->
       <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;align-items:center">
         <div style="position:relative;flex:1;min-width:180px">
-          <input type="text" id="cx-search" class="iput" style="width:100%;padding-left:30px" placeholder="Search by customer or provider..." oninput="renderCancels()">
+          <input type="text" id="rs-search" class="iput" style="width:100%;padding-left:30px" placeholder="Search customer or technician..." oninput="renderReschedules()">
           <svg style="position:absolute;left:10px;top:50%;transform:translateY(-50%);opacity:.4;pointer-events:none" width="13" height="13" viewBox="0 0 16 16" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="currentColor" stroke-width="1.5"/><path d="M10 10l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </div>
-        <select id="cx-filt-type" class="iput" style="width:140px" onchange="renderCancels()"><option value="">All Types</option><option value="Cancellation">Cancellations</option><option value="Reschedule">Reschedules</option></select>
-        <select id="cx-filt-svc" class="iput" style="width:150px" onchange="renderCancels()"><option value="">All Services</option><option>Car Detailing</option><option>Roof Lining</option><option>Dash Cam</option><option>Tinting</option></select>
+        <select id="rs-filt-init" class="iput" style="width:170px" onchange="renderReschedules()">
+          <option value="">All (Customer + Tech)</option>
+          <option value="Customer">👤 Customer only</option>
+          <option value="Technician">🔧 Technician only</option>
+        </select>
+        <select id="rs-filt-svc" class="iput" style="width:150px" onchange="renderReschedules()">
+          <option value="">All Services</option><option>Car Detailing</option><option>Roof Lining</option><option>Dash Cam</option><option>Tinting</option>
+        </select>
       </div>
 
+      <!-- Table -->
       <div class="card">
         <div class="card-body" style="padding:0">
           <table class="ttable" style="width:100%">
-            <thead><tr><th>Customer</th><th>Type</th><th>Service</th><th>Provider</th><th>Penalty</th><th>Date</th><th>Reason</th><th>Logged By</th><th></th></tr></thead>
-            <tbody id="cancel-tbody"></tbody>
+            <thead><tr><th>Customer</th><th>Service</th><th>Technician</th><th>Original Date</th><th>New Date</th><th>Initiated By</th><th>Reason</th><th>Logged By</th><th>Date</th><th></th></tr></thead>
+            <tbody id="rs-tbody"></tbody>
           </table>
-          <div id="cancel-empty" class="es">No entries yet. Click + Add Entry to log one.</div>
+          <div id="rs-empty" class="es">No reschedules logged yet. Click + Log Reschedule or connect your BK Database sheet.</div>
         </div>
       </div>
+    </div>
+
+    <!-- KPI DASHBOARD -->
+    <div class="tab-panel" id="tab-kpi">
+      <div class="sh">
+        <div><div class="sh-title">Bookings & KPI Dashboard</div><div class="sh-sub">Weekly &amp; monthly trends — bookings, leads, service breakdown, team targets</div></div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <div style="display:flex;background:var(--surface2);border:1px solid var(--border);border-radius:7px;overflow:hidden">
+            <button id="kpi-toggle-w" onclick="setKPIPeriod('weekly')" style="padding:6px 14px;font-size:12px;font-weight:600;border:none;background:var(--accent);color:#fff;cursor:pointer;font-family:var(--font)">Weekly</button>
+            <button id="kpi-toggle-m" onclick="setKPIPeriod('monthly')" style="padding:6px 14px;font-size:12px;font-weight:600;border:none;background:transparent;color:var(--muted);cursor:pointer;font-family:var(--font)">Monthly</button>
+          </div>
+          <button class="rbtn" onclick="fetchBookings();buildKPI()">↻ Refresh All</button>
+        </div>
+      </div>
+
+      <!-- Bookings URL (absorbed from old tab) -->
+      <div class="cfg"><div class="cfg-title">Bookings Web App URL</div><div class="cfg-text">Your bookings script — already connected. This feeds all KPI charts and team breakdown. Leads URL is configured on the Leads tab.</div><div style="margin-top:8px"><div class="urow"><label>Web App URL</label><input type="text" id="bookings-url" placeholder="https://script.google.com/macros/s/..." oninput="saveUrl('bookings',this.value)"><button class="btn sm" onclick="fetchBookings()">Refresh</button></div></div></div>
+
+      <!-- Snapshot stats row -->
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:16px" id="kpi-stats-row">
+        <div class="stat green"><div class="stat-label">This Week</div><div class="stat-val" id="kpi-this-week">--</div><div class="stat-sub">bookings (last 7d)</div></div>
+        <div class="stat purple"><div class="stat-label">Last Week</div><div class="stat-val" id="kpi-last-week">--</div><div class="stat-sub">bookings</div></div>
+        <div class="stat info"><div class="stat-label">Week-on-Week</div><div class="stat-val" id="kpi-wow" style="font-size:18px">--</div><div class="stat-sub">change</div></div>
+        <div class="stat warn"><div class="stat-label">Leads This Week</div><div class="stat-val" id="kpi-leads-week">--</div><div class="stat-sub">new enquiries</div></div>
+        <div class="stat danger"><div class="stat-label">Lead → Book Rate</div><div class="stat-val" id="kpi-conv" style="font-size:18px">--%</div><div class="stat-sub">approx conversion</div></div>
+      </div>
+
+      <!-- Bookings trend chart -->
+      <div class="card" style="margin-bottom:16px">
+        <div class="card-header">
+          <div class="card-title" id="kpi-trend-title">📈 Booking Trend — Last 10 Weeks</div>
+          <span id="kpi-trend-sub" style="font-size:11px;color:var(--muted)"></span>
+        </div>
+        <div class="card-body" id="kpi-trend-body" style="padding:16px 16px 8px">
+          <div class="es">Connect your Bookings sheet and click Rebuild Charts</div>
+        </div>
+      </div>
+
+      <!-- Service category breakdown -->
+      <div class="g2" style="margin-bottom:16px">
+        <div class="card" style="margin-bottom:0">
+          <div class="card-header">
+            <div class="card-title" id="kpi-svc-title">🔧 Service Breakdown</div>
+            <span style="font-size:11px;color:var(--muted)" id="kpi-svc-period"></span>
+          </div>
+          <div class="card-body" id="kpi-svc-body">
+            <div class="es">No data yet</div>
+          </div>
+        </div>
+        <div class="card" style="margin-bottom:0">
+          <div class="card-header">
+            <div class="card-title" id="kpi-svc-trend-title">📊 Service Trend Over Time</div>
+          </div>
+          <div class="card-body" id="kpi-svc-trend-body">
+            <div class="es">No data yet</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Leads breakdown -->
+      <div class="g2" style="margin-bottom:16px">
+        <div class="card" style="margin-bottom:0">
+          <div class="card-header">
+            <div class="card-title" id="kpi-leads-title">🎯 Lead Volume Trend</div>
+          </div>
+          <div class="card-body" id="kpi-leads-body">
+            <div class="es">Connect your Leads sheet and click Rebuild Charts</div>
+          </div>
+        </div>
+        <div class="card" style="margin-bottom:0">
+          <div class="card-header">
+            <div class="card-title">🎯 Leads by Service Category</div>
+          </div>
+          <div class="card-body" id="kpi-leads-svc-body">
+            <div class="es">No data yet</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Monthly target + team breakdown (absorbed from old Bookings tab) -->
+      <div class="g2">
+        <div class="card" style="margin-bottom:0">
+          <div class="card-header">
+            <div class="card-title">🎯 Monthly Target</div>
+            <div style="display:flex;align-items:center;gap:8px">
+              <span style="font-size:11px;color:var(--muted)">Target:</span>
+              <input type="number" id="bk-target" min="1" placeholder="e.g. 50" style="width:70px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:4px 8px;color:var(--text);font-family:var(--mono);font-size:13px;outline:none;text-align:center" oninput="saveTarget(this.value);renderTarget()">
+              <span style="font-size:11px;color:var(--muted)">/month</span>
+            </div>
+          </div>
+          <div class="card-body" id="target-tracker-body"><div style="text-align:center;color:var(--muted);font-size:13px;padding:8px">Set a target above</div></div>
+        </div>
+        <div class="card" style="margin-bottom:0">
+          <div class="card-header">
+            <div class="card-title">👥 Team Breakdown</div>
+            <div style="display:flex;align-items:center;gap:6px">
+              <button class="rbtn" onclick="changeMonth(-1)">← Prev</button>
+              <span id="month-display" style="font-size:12px;font-weight:600;min-width:100px;text-align:center;color:var(--text)"></span>
+              <button class="rbtn" id="month-next-btn" onclick="changeMonth(1)">Next →</button>
+              <button class="rbtn" onclick="fetchBookings()"><span id="bk-spin">↻</span></button>
+            </div>
+          </div>
+          <div class="card-body" style="padding:0">
+            <table class="ttable" style="width:100%">
+              <thead><tr><th>#</th><th>Staff Member</th><th style="text-align:center">Bookings</th><th style="text-align:center">Quotes</th><th style="text-align:center">Total</th></tr></thead>
+              <tbody id="bk-tbody"><tr><td colspan="5" style="padding:24px;text-align:center;color:var(--muted)">Connect Bookings sheet</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI ASSIST (rebuilt with Knowledge Base) -->
+    <div class="tab-panel" id="tab-ai-complaints">
+      <div class="sh">
+        <div><div class="sh-title">AI Assist</div><div class="sh-sub">Situation advisor — learns from your uploaded scenarios &amp; past decisions</div></div>
+        <button class="rbtn" onclick="showTab('ai-kb')">📚 Knowledge Base →</button>
+      </div>
+
+      <div class="g2">
+        <!-- Left: input + response -->
+        <div>
+          <div class="card">
+            <div class="card-header"><div class="card-title">Describe the Situation</div><button class="rbtn" onclick="clearComplaint()">Clear</button></div>
+            <div class="card-body" style="display:flex;flex-direction:column;gap:10px">
+              <div class="fi"><label>Context / Background</label><input type="text" id="ai-ctx" placeholder="e.g. Late cancellation, repeat customer, Detailing job..."></div>
+              <div class="fi"><label>Situation / Complaint</label><textarea id="ai-text" style="min-height:120px" placeholder="Paste the complaint, reschedule request, or situation you need help handling..."></textarea></div>
+              <div class="fi">
+                <label>Category</label>
+                <select id="ai-cat" style="background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:8px 10px;color:var(--text);font-family:var(--font);font-size:13px;outline:none;width:100%">
+                  <option value="complaint">Customer Complaint</option>
+                  <option value="reschedule">Reschedule / Cancellation</option>
+                  <option value="refund">Refund Request</option>
+                  <option value="review">Negative Review Response</option>
+                  <option value="staff">Staff / Team Issue</option>
+                  <option value="other">Other Business Decision</option>
+                </select>
+              </div>
+              <button class="btn" onclick="analyseComplaint()">🤖 Get AI Advice</button>
+            </div>
+          </div>
+
+          <!-- KB indicator -->
+          <div id="ai-kb-indicator" style="display:none;margin-bottom:12px;padding:8px 12px;background:rgba(79,195,161,.08);border:1px solid rgba(79,195,161,.2);border-radius:7px;font-size:11px;color:var(--accent2)">
+            📚 <span id="ai-kb-count">0</span> scenario(s) from your Knowledge Base will be used as reference
+          </div>
+
+          <div class="ai-think" id="ai-think" style="display:none">
+            <div class="ai-dots"><span>●</span><span>●</span><span>●</span></div>
+            <span>Analysing with your Knowledge Base as context...</span>
+          </div>
+          <div class="ai-resp" id="ai-out" style="display:none"></div>
+
+          <!-- Save to KB button (appears after response) -->
+          <div id="ai-save-kb-row" style="display:none;margin-top:8px;display:flex;gap:8px">
+            <button class="btn ghost sm" onclick="saveToKB()">📚 Save this as a Knowledge Base scenario</button>
+          </div>
+        </div>
+
+        <!-- Right: history -->
+        <div>
+          <div class="card" style="height:100%">
+            <div class="card-header">
+              <div class="card-title">Recent Sessions</div>
+              <span id="hist-count" style="font-size:11px;color:var(--muted)"></span>
+            </div>
+            <div class="card-body" style="padding:8px;overflow-y:auto;max-height:600px" id="hist-list">
+              <div class="es">No history yet.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI KNOWLEDGE BASE TAB -->
+    <div class="tab-panel" id="tab-ai-kb">
+      <div class="sh">
+        <div><div class="sh-title">AI Knowledge Base</div><div class="sh-sub">Upload situations &amp; solutions — AI references these when advising on new cases</div></div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <button class="rbtn" onclick="exportKB()">⬇ Export JSON</button>
+          <button class="btn sm" onclick="document.getElementById('kb-import-inp').click()">⬆ Import JSON</button>
+          <input type="file" id="kb-import-inp" accept=".json" style="display:none" onchange="importKB(this)">
+        </div>
+      </div>
+
+      <div class="cfg">
+        <div class="cfg-title">📚 How the Knowledge Base Works</div>
+        <div class="cfg-text">Add real situations you've faced and how you resolved them. When you ask AI Assist a question, it automatically pulls relevant scenarios from here as context — so it gives you answers that match <em>your</em> business style, not generic advice. The more you add, the smarter it gets. You can also import/export as JSON to back it up or share with the team.</div>
+      </div>
+
+      <!-- Add new scenario form -->
+      <div class="card" style="margin-bottom:16px">
+        <div class="card-header"><div class="card-title">Add New Scenario</div></div>
+        <div class="card-body">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+            <div class="fi"><label>Category</label>
+              <select id="kb-cat" style="background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:8px 10px;color:var(--text);font-family:var(--font);font-size:13px;outline:none;width:100%">
+                <option value="complaint">Customer Complaint</option>
+                <option value="reschedule">Reschedule / Cancellation</option>
+                <option value="refund">Refund Request</option>
+                <option value="review">Negative Review Response</option>
+                <option value="staff">Staff / Team Issue</option>
+                <option value="other">Other Business Decision</option>
+              </select>
+            </div>
+            <div class="fi"><label>Title / Short Description</label><input type="text" id="kb-title" placeholder="e.g. Customer demanded refund after detailing..."></div>
+            <div class="fi" style="grid-column:1/-1"><label>Situation (what happened)</label><textarea id="kb-situation" style="min-height:80px" placeholder="Describe the situation in detail..."></textarea></div>
+            <div class="fi" style="grid-column:1/-1"><label>Resolution / What We Did</label><textarea id="kb-resolution" style="min-height:80px" placeholder="How did you handle it? What was the outcome?"></textarea></div>
+            <div class="fi"><label>Outcome</label>
+              <select id="kb-outcome" style="background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:8px 10px;color:var(--text);font-family:var(--font);font-size:13px;outline:none;width:100%">
+                <option value="positive">✅ Positive — customer satisfied</option>
+                <option value="neutral">➖ Neutral — acceptable outcome</option>
+                <option value="negative">❌ Negative — did not go well</option>
+              </select>
+            </div>
+            <div class="fi"><label>Tags (comma separated)</label><input type="text" id="kb-tags" placeholder="e.g. refund, detailing, repeat-customer"></div>
+          </div>
+          <div style="display:flex;justify-content:flex-end"><button class="btn" onclick="addKBEntry()">Add to Knowledge Base</button></div>
+        </div>
+      </div>
+
+      <!-- Search + filter -->
+      <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;align-items:center">
+        <div style="position:relative;flex:1;min-width:180px">
+          <input type="text" id="kb-search" class="iput" style="width:100%;padding-left:30px" placeholder="Search scenarios..." oninput="renderKB()">
+          <svg style="position:absolute;left:10px;top:50%;transform:translateY(-50%);opacity:.4;pointer-events:none" width="13" height="13" viewBox="0 0 16 16" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="currentColor" stroke-width="1.5"/><path d="M10 10l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <select id="kb-filt-cat" class="iput" style="width:170px" onchange="renderKB()">
+          <option value="">All Categories</option>
+          <option value="complaint">Complaint</option>
+          <option value="reschedule">Reschedule</option>
+          <option value="refund">Refund</option>
+          <option value="review">Review Response</option>
+          <option value="staff">Staff Issue</option>
+          <option value="other">Other</option>
+        </select>
+        <select id="kb-filt-outcome" class="iput" style="width:140px" onchange="renderKB()">
+          <option value="">All Outcomes</option>
+          <option value="positive">✅ Positive</option>
+          <option value="neutral">➖ Neutral</option>
+          <option value="negative">❌ Negative</option>
+        </select>
+        <span id="kb-count-lbl" style="font-size:11px;color:var(--muted)"></span>
+      </div>
+
+      <!-- KB entries list -->
+      <div id="kb-list" style="display:flex;flex-direction:column;gap:10px">
+        <div class="es">No scenarios yet. Add your first one above.</div>
+      </div>
+    </div>
+
+    <!-- TRAINING HUB -->
+    <div class="tab-panel" id="tab-training">
+      <div class="sh"><div><div class="sh-title">Training Hub</div><div class="sh-sub">Embed docs, videos or SOPs for team reference</div></div></div>
+      <div class="cfg"><div class="cfg-title">Embed a Resource</div><div class="cfg-text">Paste any URL (Google Doc, Notion, Loom video, etc.) to embed it below.</div>
+        <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
+          <input type="text" id="kb-url" class="iput" style="flex:1" placeholder="https://...">
+          <button class="btn sm" onclick="loadKB()">Load</button>
+        </div>
+      </div>
+      <div id="kb-embed"></div>
     </div>
 
     <!-- CHANGE HISTORY -->
@@ -627,7 +1072,7 @@ function store(k,v){try{localStorage.setItem(SK+k,JSON.stringify(v));}catch(e){}
 function load(k,d){try{var v=localStorage.getItem(SK+k);return v!==null?JSON.parse(v):d;}catch(e){return d;}}
 function saveUrl(k,v){store('url_'+k,v);}
 function restoreUrls(){
-  ['bookings','sms','leads','shopify','kb'].forEach(function(k){
+  ['bookings','sms','leads','shopify','kb','reschedules','cancellations-sheet','unassigned'].forEach(function(k){
     var el=document.getElementById(k+'-url');
     if(el){var v=load('url_'+k,'');if(v)el.value=v;}
   });
@@ -642,14 +1087,21 @@ function updateClock(){
 updateClock();setInterval(updateClock,1000);
 
 // TABS
-var TITLES={overview:'Overview',todo:'Team To-Do',tickets:'Complaints',bookings:'Bookings & Targets',sms:'SMS Inbox',leads:'Leads Feed',shopify:'Shopify Orders','ai-complaints':'AI Complaint Assistant',training:'Training Hub',leadform:'Internal Lead Form',cancellations:'Cancellations & Reschedules',history:'Change History'};
+var TITLES={overview:'Overview',todo:'Team To-Do',tickets:'Complaints',kpi:'Bookings & KPI Dashboard',unassigned:'Unassigned Bookings',sms:'SMS Inbox',leads:'Leads Feed',shopify:'Shopify Orders','booking-rules':'Booking Follow-Up Rules','ai-complaints':'AI Assist','ai-kb':'Knowledge Base',training:'Training Hub',leadform:'Internal Lead Form',reschedules:'Reschedule Tracker',missedcalls:'Missed Calls & Voicemail',history:'Change History'};
 function showTab(id){
   document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});
   document.querySelectorAll('.nav-item').forEach(function(n){n.classList.remove('active');});
-  document.getElementById('tab-'+id).classList.add('active');
+  var panel=document.getElementById('tab-'+id);
+  if(panel) panel.classList.add('active');
   document.querySelectorAll('.nav-item').forEach(function(n){if(n.getAttribute('onclick')&&n.getAttribute('onclick').indexOf("'"+id+"'")>-1)n.classList.add('active');});
   document.getElementById('page-title').textContent=TITLES[id]||id;
   if(id==='overview')renderOverview();
+  if(id==='reschedules') renderReschedules();
+  if(id==='kpi') buildKPI();
+  if(id==='ai-kb') renderKB();
+  if(id==='ai-complaints'){renderHistory();updateKBIndicator();}
+  if(id==='booking-rules') renderRules();
+  if(id==='unassigned') fetchUnassigned();
 }
 
 // TEAM TO-DO
@@ -715,8 +1167,14 @@ function addTask(){
 function completeTask(id){
   var t=todos.find(function(x){return x.id===id;});
   if(!t)return;
-  // Show choice modal
-  showCompleteModal(id, t.text);
+  t.completedOn=new Date().toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'});
+  archived.unshift(t);
+  todos=todos.filter(function(x){return x.id!==id;});
+  saveTodos();renderTodos();renderArchive();renderOverview();
+  logAction('task','Completed & archived: "'+t.text.slice(0,60)+'"');
+  // Brief visual feedback
+  var badge=document.getElementById('todo-badge');
+  if(badge){badge.style.background='var(--success)';setTimeout(function(){badge.style.background='';},1500);}
 }
 
 function closeCompleteModal(){var m=document.getElementById("complete-modal");if(m)m.remove();}
@@ -1023,27 +1481,32 @@ function updateMonthDisp(){
 function changeMonth(d){var p=curMonth.split('-'),dt=new Date(parseInt(p[0]),parseInt(p[1])-1+d,1);curMonth=dt.getFullYear()+'-'+String(dt.getMonth()+1).padStart(2,'0');updateMonthDisp();fetchBookings();}
 async function fetchBookings(){
   var url=load('url_bookings','');if(!url){alert('Paste your Bookings script URL first.');return;}
-  var spin=document.getElementById('bk-spin');spin.classList.add('spinning');
+  var spin=document.getElementById('bk-spin');if(spin)spin.classList.add('spinning');
   try{
     var res=await fetch(url+(url.indexOf('?')>-1?'&':'?')+'month='+curMonth),data=await res.json();
     if(data.error){alert('Sheet error: '+data.error);return;}
-    document.getElementById('bk-stats').innerHTML=
+    // Update KPI overview stats if present
+    var bkStatsEl=document.getElementById('bk-stats');
+    if(bkStatsEl) bkStatsEl.innerHTML=
       '<div class="stat green"><div class="stat-label">Total Bookings</div><div class="stat-val">'+(data.total_bookings||0)+'</div><div class="stat-sub">'+(data.month_label||'')+'</div></div>'+
       '<div class="stat purple"><div class="stat-label">Quotes Sent</div><div class="stat-val">'+(data.total_quotes||0)+'</div><div class="stat-sub">'+(data.month_label||'')+'</div></div>'+
       '<div class="stat info"><div class="stat-label">Active Staff</div><div class="stat-val">'+((data.rows||[]).length)+'</div><div class="stat-sub">with activity</div></div>';
     var bkLbl=document.getElementById('bk-month-lbl');if(bkLbl)bkLbl.textContent=data.month_label||'';
     window._bkData=data;
-    try{renderTarget();}catch(e){console.log('renderTarget err',e);}
+    try{renderTarget();}catch(e){}
     var rows=data.rows||[],max=rows.reduce(function(m,r){return Math.max(m,r.total);},1);
     var tbody=document.getElementById('bk-tbody');
-    if(!rows.length){tbody.innerHTML='<tr><td colspan="6" style="padding:32px;text-align:center;color:var(--muted)">No data for '+(data.month_label||curMonth)+'</td></tr>';return;}
-    tbody.innerHTML=rows.map(function(r,i){
-      var pct=Math.round((r.total/max)*100),medal=i===0?'&#127945;':i===1?'&#127946;':i===2?'&#127947;':'';
-      return '<tr><td style="color:var(--muted);font-family:var(--mono);font-size:11px">'+(i+1)+'</td><td style="font-weight:600">'+esc(r.name)+' '+medal+'</td><td style="text-align:center;font-family:var(--mono)">'+r.bookings+'</td><td style="text-align:center;font-family:var(--mono)">'+r.quotes+'</td><td style="text-align:center;font-family:var(--mono);font-weight:700;color:var(--accent2)">'+r.total+'</td><td><div style="background:var(--surface2);border-radius:4px;height:6px;overflow:hidden"><div style="height:100%;width:'+pct+'%;background:var(--accent);border-radius:4px"></div></div></td></tr>';
-    }).join('');
+    if(tbody){
+      if(!rows.length){tbody.innerHTML='<tr><td colspan="5" style="padding:24px;text-align:center;color:var(--muted)">No data for '+(data.month_label||curMonth)+'</td></tr>';}
+      else tbody.innerHTML=rows.map(function(r,i){
+        var pct=Math.round((r.total/max)*100),medal=i===0?'&#127945;':i===1?'&#127946;':i===2?'&#127947;':'';
+        return '<tr><td style="color:var(--muted);font-family:var(--mono);font-size:11px">'+(i+1)+'</td><td style="font-weight:600">'+esc(r.name)+' '+medal+'</td><td style="text-align:center;font-family:var(--mono)">'+r.bookings+'</td><td style="text-align:center;font-family:var(--mono)">'+r.quotes+'</td><td style="text-align:center;font-family:var(--mono);font-weight:700;color:var(--accent2)">'+r.total+'</td></tr>';
+      }).join('');
+    }
     checkNew('bookings',data);renderOverview();
+    try{buildKPI();}catch(e){}
   }catch(e){alert('Could not reach the script.\n\n'+e.message);}
-  finally{spin.classList.remove('spinning');}
+  finally{if(spin)spin.classList.remove('spinning');}
 }
 updateMonthDisp();
 
@@ -1052,14 +1515,14 @@ var allSMS=[],smsRead=load('sms_read',{}),smsFilt='all';
 function smsKey(m){return (m.phone||'')+'||'+(m.message||'');}
 async function fetchSMS(){
   var url=load('url_sms','');if(!url){alert('Paste your SMS script URL first.');return;}
-  var spin=document.getElementById('sms-spin');spin.classList.add('spinning');
+  var spin=document.getElementById('sms-spin');if(spin)spin.classList.add('spinning');
   try{
     var res=await fetch(url),data=await res.json();
     if(data.error){alert('SMS error: '+data.error);return;}
     allSMS=data.messages||data.rows||[];smsRead=load('sms_read',{});
     filterSMS();checkNew('sms',data);renderOverview();
   }catch(e){alert('Could not load SMS.\n\n'+e.message);}
-  finally{spin.classList.remove('spinning');}
+  finally{if(spin)spin.classList.remove('spinning');}
 }
 function setSMSFilter(m){
   smsFilt=m;
@@ -1102,7 +1565,7 @@ function filterSMS(){
 // LEADS
 async function fetchLeads(){
   var url=load('url_leads','');if(!url){alert('Paste your Leads script URL first.');return;}
-  var spin=document.getElementById('leads-spin');spin.classList.add('spinning');
+  var spin=document.getElementById('leads-spin');if(spin)spin.classList.add('spinning');
   try{
     var res=await fetch(url),data=await res.json();
     if(data.error){alert('Leads error: '+data.error);return;}
@@ -1119,7 +1582,7 @@ async function fetchLeads(){
     }).join('');
     checkNew('leads',data);renderOverview();
   }catch(e){alert('Could not load leads.\n\n'+e.message);}
-  finally{spin.classList.remove('spinning');}
+  finally{if(spin)spin.classList.remove('spinning');}
 }
 
 // SHOPIFY
@@ -1129,7 +1592,7 @@ async function fetchShopify(){
   var url=load('url_shopify','');
   if(!url){alert('Paste your Shopify Apps Script URL first.');return;}
   shopifyScriptUrl = url;
-  var spin=document.getElementById('sh-spin');spin.classList.add('spinning');
+  var spin=document.getElementById('sh-spin');if(spin)spin.classList.add('spinning');
   try{
     var res=await fetch(url);var data=await res.json();
     if(data.error){alert('Shopify error: '+data.error);return;}
@@ -1181,7 +1644,7 @@ async function fetchShopify(){
     }).join('');
 
   }catch(e){alert('Could not load Shopify orders.\n\n'+e.message);}
-  finally{spin.classList.remove('spinning');}
+  finally{if(spin)spin.classList.remove('spinning');}
 }
 
 async function updateShopifyStatus(sel){
@@ -1204,40 +1667,6 @@ async function updateShopifyStatus(sel){
     alert('Could not update status.\n\n'+e.message);
   }
 }
-
-// AI COMPLAINTS
-var cHistory=load('complaint_history',[]);
-async function analyseComplaint(){
-  var text=document.getElementById('ai-text').value.trim(),ctx=document.getElementById('ai-ctx').value.trim();
-  if(!text){alert('Please paste a complaint first.');return;}
-  document.getElementById('ai-out').style.display='none';document.getElementById('ai-think').style.display='flex';
-  var hCtx=cHistory.length?'\n\nPast complaints:\n'+cHistory.slice(0,5).map(function(h){return '- "'+h.complaint.slice(0,100)+'..." -> '+h.resolution.slice(0,120);}).join('\n'):'';
-  var prompt='You are an internal assistant for Schmicko (mobile car wash/detailing). Help respond to this customer complaint:\n1. Summarise the issue\n2. Suggest a professional response strategy defending the business where fair\n3. Recommend a specific resolution\n4. Flag reputation or legal risks\n\n'+(ctx?'Context: '+ctx+'\n':'')+'Complaint:\n"'+text+'"'+hCtx+'\n\nBe concise. Use bullet points.';
-  try{
-    var res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,messages:[{role:'user',content:prompt}]})});
-    var data=await res.json();
-    var reply=(data.content&&data.content[0]&&data.content[0].text)||'No response received.';
-    document.getElementById('ai-think').style.display='none';document.getElementById('ai-out').style.display='block';document.getElementById('ai-out').textContent=reply;
-    cHistory.unshift({id:Date.now(),complaint:text,context:ctx,resolution:reply,date:new Date().toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'})});
-    if(cHistory.length>50)cHistory=cHistory.slice(0,50);
-    store('complaint_history',cHistory);renderHistory();
-  }catch(e){document.getElementById('ai-think').style.display='none';document.getElementById('ai-out').style.display='block';document.getElementById('ai-out').textContent='Error: '+e.message;}
-}
-function clearComplaint(){document.getElementById('ai-text').value='';document.getElementById('ai-ctx').value='';document.getElementById('ai-out').style.display='none';document.getElementById('ai-think').style.display='none';}
-function renderHistory(){
-  var el=document.getElementById('hist-list');var hc=document.getElementById('hist-count');if(hc)hc.textContent=cHistory.length+' saved';
-  if(!el)return;
-  if(!cHistory.length){el.innerHTML='<div class="es" style="padding:20px">No history yet.</div>';return;}
-  el.innerHTML=cHistory.map(function(h){
-    return '<div class="hist-item" onclick="loadHist('+h.id+')"><div style="font-size:12px;font-weight:600;margin-bottom:4px;display:flex;justify-content:space-between"><span>'+esc(h.context||'Complaint')+'</span><span style="color:var(--muted);font-size:10px;font-family:var(--mono)">'+h.date+'</span></div><div style="font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+esc(h.complaint)+'</div></div>';
-  }).join('');
-}
-function loadHist(id){var h=cHistory.find(function(x){return x.id===id;});if(!h)return;document.getElementById('ai-text').value=h.complaint;document.getElementById('ai-ctx').value=h.context||'';document.getElementById('ai-out').textContent=h.resolution;document.getElementById('ai-out').style.display='block';showTab('ai-complaints');}
-renderHistory();
-
-// TRAINING
-function loadKB(){var url=load('url_kb','');if(!url){alert('Paste a URL first.');return;}document.getElementById('kb-embed').innerHTML='<iframe src="'+url+'" style="width:100%;height:600px;border:none;display:block" allowfullscreen></iframe>';}
-function focusKB(){showTab('training');setTimeout(function(){document.getElementById('kb-url').focus();},100);}
 
 // OVERVIEW
 function updateBadges(){
@@ -1413,7 +1842,7 @@ async function fetchMissedCalls(){
   var url = load('url_missedcalls','');
   if(!url){alert('Paste your Zoom missed calls Web App URL first.');return;}
   var spin = document.getElementById('mc-spin');
-  spin.classList.add('spinning');
+  if(spin)spin.classList.add('spinning');
   try{
     var res = await fetch(url);
     var data = await res.json();
@@ -1424,7 +1853,7 @@ async function fetchMissedCalls(){
     filterMissedCalls();
     renderOverview();
   }catch(e){alert('Could not load missed calls.\n\n'+e.message);}
-  finally{spin.classList.remove('spinning');}
+  finally{if(spin)spin.classList.remove('spinning');}
 }
 
 function updateMCStats(){
@@ -1626,96 +2055,1162 @@ markAllRead=function(){
   logAction('sms','Marked all SMS as read');
 };
 
-// CANCELLATIONS & RESCHEDULES
+// CANCELLATIONS — tab removed, keeping data store for history
 var cancelEntries=load('cancel_entries',[]);
 function saveCancels(){store('cancel_entries',cancelEntries);}
+function openCancelForm(){}
+function closeCancelForm(){}
+function addCancelEntry(){}
+function deleteCancelEntry(){}
+function renderCancels(){}
+function fetchCancelSheet(){}
 
-function openCancelForm(){document.getElementById('cancel-form').style.display='block';setTimeout(function(){document.getElementById('cx-name').focus();},50);}
-function closeCancelForm(){document.getElementById('cancel-form').style.display='none';}
+// GMAIL — tab removed, stubs retained to prevent errors
+var gmailCalls=[];
+var gmailActioned=load('gmail_actioned',{});
+var gmailFilter='all';
+function gmKey(m){return(m.id||m.subject+'|'+m.date);}
+function fetchGmailCalls(){}
+function setGmailFilter(){}
+function actionGmail(){}
+function unactionGmail(){}
+function markAllGmailActioned(){}
+function updateGmailStats(){}
+function renderGmailCalls(){}
 
-function addCancelEntry(){
-  var name=document.getElementById('cx-name').value.trim();
-  var service=document.getElementById('cx-service').value;
-  var provider=document.getElementById('cx-provider').value.trim();
-  var penalty=document.getElementById('cx-penalty').value;
-  var date=document.getElementById('cx-date').value;
-  var type=document.getElementById('cx-type').value;
-  var reason=document.getElementById('cx-reason').value.trim();
-  if(!name){alert('Please enter a customer name.');return;}
-  var entry={
-    id:Date.now(),name:name,service:service,provider:provider,
-    penalty:penalty,date:date,type:type,reason:reason,
-    loggedBy:currentUser||'Unknown',
-    created:new Date().toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'})
-  };
-  cancelEntries.unshift(entry);
-  saveCancels();
-  logAction('cancel',type+' logged for '+name+(service?' ('+service+')':''));
-  // Reset form
-  document.getElementById('cx-name').value='';
-  document.getElementById('cx-provider').value='';
-  document.getElementById('cx-reason').value='';
-  document.getElementById('cx-service').value='';
-  document.getElementById('cx-date').value='';
-  renderCancels();closeCancelForm();
-}
+// ===================== RESCHEDULE TRACKER =====================
+var reschedules = load('reschedules', []);
+function saveReschedules(){ store('reschedules', reschedules); updateReschedBadge(); }
 
-function deleteCancelEntry(id){
-  if(confirm('Delete this entry?')){
-    cancelEntries=cancelEntries.filter(function(x){return x.id!==id;});
-    saveCancels();logAction('cancel','Deleted a cancellation entry');renderCancels();
+function updateReschedBadge(){
+  var badge = document.getElementById('resched-badge');
+  var techCount = reschedules.filter(function(r){
+    var d = new Date(r.date || r.created_raw);
+    var now = new Date();
+    return r.initiatedBy === 'Technician' && d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear();
+  }).length;
+  if(badge) badge.textContent = techCount;
+
+  // Risk alert
+  var total = reschedules.filter(function(r){
+    var d = new Date(r.date || r.created_raw);
+    var now = new Date();
+    return d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear();
+  }).length;
+  var techPct = total > 0 ? Math.round((techCount/total)*100) : 0;
+  var banner = document.getElementById('resched-risk-banner');
+  var rsAlert = document.getElementById('rs-risk-alert');
+  if(techPct >= 30 && total >= 3){
+    var msg = techCount + ' of ' + total + ' reschedules this month were technician-initiated (' + techPct + '%). This risks customer trust.';
+    if(banner){ banner.style.display='flex'; document.getElementById('resched-risk-msg').textContent = msg; }
+    if(rsAlert){ rsAlert.style.display='block'; document.getElementById('rs-risk-detail').textContent = msg + ' Consider flagging for review.'; }
+  } else {
+    if(banner) banner.style.display='none';
+    if(rsAlert) rsAlert.style.display='none';
   }
 }
 
-var PENALTY_STYLE={None:'color:var(--muted)',Warning:'color:var(--warn)',Minor:'color:var(--warn);font-weight:600',Major:'color:var(--danger);font-weight:600'};
+function openReschedForm(){ document.getElementById('resched-form').style.display='block'; setTimeout(function(){document.getElementById('rs-cname').focus();},50); }
+function closeReschedForm(){ document.getElementById('resched-form').style.display='none'; }
 
-function renderCancels(){
-  var tbody=document.getElementById('cancel-tbody');
-  var empty=document.getElementById('cancel-empty');
-  var q=(document.getElementById('cx-search')||{}).value||'';q=q.trim().toLowerCase();
-  var fType=(document.getElementById('cx-filt-type')||{}).value||'';
-  var fSvc=(document.getElementById('cx-filt-svc')||{}).value||'';
-  var rows=cancelEntries;
-  if(q)rows=rows.filter(function(r){return (r.name||'').toLowerCase().indexOf(q)>-1||(r.provider||'').toLowerCase().indexOf(q)>-1||(r.reason||'').toLowerCase().indexOf(q)>-1;});
-  if(fType)rows=rows.filter(function(r){return r.type===fType;});
-  if(fSvc)rows=rows.filter(function(r){return r.service===fSvc;});
-  if(!rows.length){if(tbody)tbody.innerHTML='';if(empty)empty.style.display='block';return;}
-  if(empty)empty.style.display='none';
-  tbody.innerHTML=rows.map(function(r){
-    var dateTxt=r.date?new Date(r.date).toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'}):r.created||'--';
-    var typeStyle=r.type==='Cancellation'?'background:rgba(240,85,104,.12);color:var(--danger);border:1px solid rgba(240,85,104,.25)':'background:rgba(240,160,80,.12);color:var(--warn);border:1px solid rgba(240,160,80,.25)';
+function addReschedEntry(){
+  var cname = document.getElementById('rs-cname').value.trim();
+  if(!cname){ alert('Please enter a customer name.'); return; }
+  var entry = {
+    id: Date.now(),
+    customer: cname,
+    service: document.getElementById('rs-svc').value,
+    techName: document.getElementById('rs-tech-name').value.trim(),
+    origDate: document.getElementById('rs-orig-date').value,
+    newDate: document.getElementById('rs-new-date').value,
+    initiatedBy: document.getElementById('rs-init').value,
+    reason: document.getElementById('rs-reason').value.trim(),
+    loggedBy: currentUser||'Unknown',
+    created: new Date().toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'}),
+    created_raw: new Date().toISOString(),
+    date: new Date().toISOString()
+  };
+  reschedules.unshift(entry);
+  saveReschedules();
+  logAction('cancel', 'Reschedule logged for ' + cname + ' — initiated by ' + entry.initiatedBy);
+  // Clear form
+  ['rs-cname','rs-tech-name','rs-reason'].forEach(function(id){ var el=document.getElementById(id); if(el)el.value=''; });
+  ['rs-orig-date','rs-new-date'].forEach(function(id){ var el=document.getElementById(id); if(el)el.value=''; });
+  document.getElementById('rs-svc').value='';
+  document.getElementById('rs-init').value='Customer';
+  renderReschedules();
+  closeReschedForm();
+}
+
+function deleteReschedEntry(id){
+  if(confirm('Delete this reschedule entry?')){
+    reschedules = reschedules.filter(function(r){ return r.id !== id; });
+    saveReschedules(); renderReschedules();
+  }
+}
+
+async function fetchReschedules(){
+  var url = load('url_reschedules','');
+  if(!url){ alert('Paste your BK Database reschedules script URL first.'); return; }
+  var spin = document.getElementById('rs-spin'); if(spin) spin.classList.add('spinning');
+  try{
+    var res = await fetch(url);
+    var data = await res.json();
+    if(data.error){ alert('Reschedules error: '+data.error); return; }
+    var rows = data.reschedules || data.rows || [];
+    // Merge: add remote rows not already in local (by booking_id or id)
+    var localIds = reschedules.map(function(r){ return String(r.id); });
+    rows.forEach(function(r){
+      if(!localIds.includes(String(r.id))){
+        reschedules.push({
+          id: r.id || Date.now()+Math.random(),
+          customer: r.customer_name || r.customer || '',
+          service: r.service || '',
+          techName: r.technician_name || '',
+          origDate: r.original_date || '',
+          newDate: r.new_date || '',
+          initiatedBy: r.initiated_by || 'Customer',
+          reason: r.reason || '',
+          loggedBy: r.logged_by || 'Sheet',
+          created: r.date || '',
+          created_raw: r.date || new Date().toISOString(),
+          date: r.date || new Date().toISOString()
+        });
+      }
+    });
+    saveReschedules(); renderReschedules();
+  }catch(e){ alert('Could not load reschedules.\n\n'+e.message); }
+  finally{ if(spin) spin.classList.remove('spinning'); }
+}
+
+function renderReschedStats(){
+  var now = new Date();
+  var thisMonth = reschedules.filter(function(r){
+    var d = new Date(r.date || r.created_raw || r.created);
+    return d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear();
+  });
+  var thisWeek = reschedules.filter(function(r){
+    var d = new Date(r.date || r.created_raw || r.created);
+    var weekAgo = new Date(); weekAgo.setDate(weekAgo.getDate()-7);
+    return d >= weekAgo;
+  });
+  var techMonth = thisMonth.filter(function(r){ return r.initiatedBy === 'Technician'; });
+  var custMonth = thisMonth.filter(function(r){ return r.initiatedBy === 'Customer'; });
+  var techPct = thisMonth.length > 0 ? Math.round((techMonth.length/thisMonth.length)*100) : 0;
+
+  var s = function(id,v){ var el=document.getElementById(id); if(el)el.textContent=v; };
+  s('rs-total', thisMonth.length);
+  s('rs-tech', techMonth.length);
+  s('rs-cust', custMonth.length);
+  s('rs-tech-pct', techPct+'%');
+  s('rs-week', thisWeek.length);
+  s('rs-month-label', now.toLocaleDateString('en-AU',{month:'long',year:'numeric'}));
+
+  // Chart
+  var body = document.getElementById('rs-chart-body');
+  if(!body) return;
+  if(!thisMonth.length){ body.innerHTML='<div style="text-align:center;color:var(--muted);font-size:13px;padding:8px">No reschedules this month</div>'; return; }
+
+  var custPct = thisMonth.length > 0 ? Math.round((custMonth.length/thisMonth.length)*100) : 0;
+  var bar = '<div style="padding:8px 0">';
+  // Bar split
+  bar += '<div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">';
+  bar += '<div style="flex:1"><div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em">Customer</span><span style="font-size:11px;font-family:var(--mono);font-weight:600;color:var(--success)">'+custMonth.length+' ('+custPct+'%)</span></div>';
+  bar += '<div style="height:10px;background:var(--surface2);border-radius:6px;overflow:hidden"><div style="width:'+custPct+'%;height:100%;background:var(--success);border-radius:6px;transition:width .5s"></div></div></div>';
+  bar += '</div>';
+  bar += '<div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">';
+  bar += '<div style="flex:1"><div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em">🔧 Technician (Us)</span><span style="font-size:11px;font-family:var(--mono);font-weight:600;color:'+(techPct>=30?'var(--danger)':'var(--warn)')+'">'+techMonth.length+' ('+techPct+'%)</span></div>';
+  bar += '<div style="height:10px;background:var(--surface2);border-radius:6px;overflow:hidden"><div style="width:'+techPct+'%;height:100%;background:'+(techPct>=30?'var(--danger)':'var(--warn)')+';border-radius:6px;transition:width .5s"></div></div></div>';
+  bar += '</div>';
+
+  // Technician breakdown table
+  if(techMonth.length){
+    var techTally = {};
+    techMonth.forEach(function(r){ var n = r.techName||'Unknown'; techTally[n]=(techTally[n]||0)+1; });
+    bar += '<div style="margin-top:4px"><div style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Technician Breakdown</div>';
+    bar += '<div style="display:flex;flex-wrap:wrap;gap:8px">';
+    Object.keys(techTally).forEach(function(n){
+      var c = techTally[n];
+      var pctOfTech = techMonth.length>0?Math.round((c/techMonth.length)*100):0;
+      bar += '<div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;min-width:120px">';
+      bar += '<div style="font-weight:600;margin-bottom:2px">'+esc(n)+'</div>';
+      bar += '<div style="font-size:20px;font-weight:700;font-family:var(--mono);color:var(--warn)">'+c+'</div>';
+      bar += '<div style="font-size:10px;color:var(--muted)">'+pctOfTech+'% of tech reschedules</div>';
+      bar += '</div>';
+    });
+    bar += '</div></div>';
+  }
+
+  bar += '</div>';
+  body.innerHTML = bar;
+
+  // Risk check
+  if(techPct >= 30 && thisMonth.length >= 3){
+    var rsAlert = document.getElementById('rs-risk-alert');
+    if(rsAlert){ rsAlert.style.display='block'; document.getElementById('rs-risk-detail').textContent = techMonth.length+' of '+thisMonth.length+' reschedules this month were technician-initiated ('+techPct+'%). This risks customer trust — consider keeping tech reschedules under 30%.'; }
+  }
+}
+
+function renderReschedules(){
+  renderReschedStats();
+  updateReschedBadge();
+  var tbody = document.getElementById('rs-tbody');
+  var empty = document.getElementById('rs-empty');
+  var q = (document.getElementById('rs-search')||{}).value||''; q=q.trim().toLowerCase();
+  var fInit = (document.getElementById('rs-filt-init')||{}).value||'';
+  var fSvc = (document.getElementById('rs-filt-svc')||{}).value||'';
+
+  var rows = reschedules;
+  if(q) rows = rows.filter(function(r){ return (r.customer||'').toLowerCase().indexOf(q)>-1||(r.techName||'').toLowerCase().indexOf(q)>-1||(r.reason||'').toLowerCase().indexOf(q)>-1; });
+  if(fInit) rows = rows.filter(function(r){ return r.initiatedBy===fInit; });
+  if(fSvc) rows = rows.filter(function(r){ return r.service===fSvc; });
+
+  if(!rows.length){ if(tbody)tbody.innerHTML=''; if(empty)empty.style.display='block'; return; }
+  if(empty) empty.style.display='none';
+
+  tbody.innerHTML = rows.map(function(r){
+    var isTech = r.initiatedBy === 'Technician';
+    var origTxt = r.origDate ? new Date(r.origDate).toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'}) : '--';
+    var newTxt = r.newDate ? new Date(r.newDate).toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'}) : '--';
     return '<tr>'+
-      '<td style="font-weight:600">'+esc(r.name)+'</td>'+
-      '<td><span class="bdg" style="'+typeStyle+'">'+esc(r.type)+'</span></td>'+
+      '<td style="font-weight:600">'+esc(r.customer)+'</td>'+
       '<td>'+esc(r.service||'--')+'</td>'+
-      '<td>'+esc(r.provider||'--')+'</td>'+
-      '<td style="'+PENALTY_STYLE[r.penalty]||''+'">'+esc(r.penalty||'None')+'</td>'+
-      '<td style="color:var(--muted);font-size:11px;font-family:var(--mono)">'+dateTxt+'</td>'+
-      '<td style="max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--muted);font-size:12px" title="'+esc(r.reason)+'">'+esc(r.reason||'--')+'</td>'+
+      '<td style="color:var(--muted)">'+esc(r.techName||'--')+'</td>'+
+      '<td style="font-family:var(--mono);font-size:11px;color:var(--muted)">'+origTxt+'</td>'+
+      '<td style="font-family:var(--mono);font-size:11px;color:var(--muted)">'+newTxt+'</td>'+
+      '<td><span class="bdg" style="'+(isTech?'background:rgba(240,85,104,.12);color:var(--danger);border:1px solid rgba(240,85,104,.25)':'background:rgba(79,195,161,.12);color:var(--success);border:1px solid rgba(79,195,161,.25)')+'">'+esc(isTech?'🔧 Technician':'👤 Customer')+'</span></td>'+
+      '<td style="max-width:160px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--muted);font-size:12px" title="'+esc(r.reason)+'">'+esc(r.reason||'--')+'</td>'+
       '<td style="font-size:11px;color:var(--muted)">'+esc(r.loggedBy||'--')+'</td>'+
-      '<td><button class="ibtn" onclick="deleteCancelEntry('+r.id+')" style="color:var(--danger)">&#10005;</button></td>'+
+      '<td style="font-family:var(--mono);font-size:11px;color:var(--muted)">'+esc(r.created||'--')+'</td>'+
+      '<td><button class="ibtn" onclick="deleteReschedEntry('+r.id+')" style="color:var(--danger)">✕</button></td>'+
     '</tr>';
   }).join('');
 }
-renderCancels();
+renderReschedules();
 
-// Init current user prompt on load
-(function(){
-  if(currentUser){
-    var disp=document.getElementById('current-user-display');
-    if(disp)disp.textContent='Logged in as: '+currentUser;
-  } else {
-    // Prompt once on first load
-    setTimeout(function(){
-      var name=prompt('Welcome to Schmicko Ops Hub! Enter your name to track your actions in the Change History.');
-      if(name&&name.trim()){
-        currentUser=name.trim();store('current_user',currentUser);
-        var disp=document.getElementById('current-user-display');
-        if(disp)disp.textContent='Logged in as: '+currentUser;
-      }
-    },800);
+// Auto-refresh reschedules from sheet every 5 min
+setInterval(function(){
+  if(load('url_reschedules','')) fetchReschedules();
+}, 5 * 60 * 1000);
+
+// ===================== KPI DASHBOARD =====================
+var kpiPeriod = 'weekly';
+var kpiBookingData = []; // raw booking rows cached from sheet
+var kpiLeadData = [];    // raw lead rows cached
+
+function setKPIPeriod(p){
+  kpiPeriod = p;
+  var bw = document.getElementById('kpi-toggle-w');
+  var bm = document.getElementById('kpi-toggle-m');
+  if(bw){ bw.style.background = p==='weekly'?'var(--accent)':'transparent'; bw.style.color = p==='weekly'?'#fff':'var(--muted)'; }
+  if(bm){ bm.style.background = p==='monthly'?'var(--accent)':'transparent'; bm.style.color = p==='monthly'?'#fff':'var(--muted)'; }
+  buildKPI();
+}
+
+function buildKPI(){
+  // Try to use cached sheet data first, then fall back to whatever _bkData has
+  var bkUrl = load('url_bookings','');
+  var leadsUrl = load('url_leads','');
+
+  // Build from cached data
+  var bkRows = kpiBookingData.length ? kpiBookingData : (window._bkData ? (window._bkData.detailed_rows || window._bkData.rows || []) : []);
+  var ldRows = kpiLeadData.length ? kpiLeadData : (window._leadsData ? (window._leadsData.leads || window._leadsData.rows || []) : []);
+
+  buildKPIStats(bkRows, ldRows);
+  buildBookingTrendChart(bkRows);
+  buildServiceBreakdown(bkRows);
+  buildLeadsCharts(ldRows, bkRows);
+}
+
+function getWeekKey(dateStr){
+  var d = new Date(dateStr);
+  if(isNaN(d)) return null;
+  // Get Monday of that week
+  var day = d.getDay(), diff = d.getDate() - day + (day===0?-6:1);
+  var mon = new Date(d); mon.setDate(diff); mon.setHours(0,0,0,0);
+  return mon.toISOString().slice(0,10);
+}
+function getMonthKey(dateStr){
+  var d = new Date(dateStr);
+  if(isNaN(d)) return null;
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0');
+}
+function fmtWeek(isoDate){
+  var d = new Date(isoDate);
+  var end = new Date(d); end.setDate(end.getDate()+6);
+  return d.toLocaleDateString('en-AU',{day:'numeric',month:'short'})+' – '+end.toLocaleDateString('en-AU',{day:'numeric',month:'short'});
+}
+function fmtMonth(key){
+  var p=key.split('-');
+  return new Date(parseInt(p[0]),parseInt(p[1])-1,1).toLocaleDateString('en-AU',{month:'short',year:'numeric'});
+}
+
+// Synthetic data generator (used when no sheet connected, for demo purposes)
+function syntheticBookings(){
+  var services = ['Car Detailing','Dash Cam','Window Tinting','Roof Lining'];
+  var rows = [];
+  var now = new Date();
+  for(var w=9;w>=0;w--){
+    var weekTotal = 18 + Math.round(Math.sin(w)*6) + Math.floor(Math.random()*8);
+    var d = new Date(now); d.setDate(d.getDate() - w*7 - Math.floor(Math.random()*7));
+    for(var i=0;i<weekTotal;i++){
+      var dd = new Date(d); dd.setDate(dd.getDate()+Math.floor(Math.random()*7));
+      rows.push({date:dd.toISOString().slice(0,10), service:services[Math.floor(Math.random()*services.length)], bookings:1});
+    }
   }
-})();
+  return rows;
+}
+function syntheticLeads(){
+  var services = ['Car Detailing','Dash Cam','Window Tinting','Roof Lining'];
+  var rows = [];
+  var now = new Date();
+  for(var w=9;w>=0;w--){
+    var total = 8+Math.floor(Math.random()*10);
+    var d = new Date(now); d.setDate(d.getDate()-w*7);
+    for(var i=0;i<total;i++){
+      var dd = new Date(d); dd.setDate(dd.getDate()+Math.floor(Math.random()*7));
+      rows.push({date:dd.toISOString().slice(0,10), service:services[Math.floor(Math.random()*services.length)]});
+    }
+  }
+  return rows;
+}
+
+function buildKPIStats(bkRows, ldRows){
+  // Use demo data if no real data
+  if(!bkRows.length) bkRows = syntheticBookings();
+  if(!ldRows.length) ldRows = syntheticLeads();
+
+  var now = new Date(); now.setHours(23,59,59,999);
+  var week1Start = new Date(now); week1Start.setDate(week1Start.getDate()-6); week1Start.setHours(0,0,0,0);
+  var week2Start = new Date(now); week2Start.setDate(week2Start.getDate()-13); week2Start.setHours(0,0,0,0);
+  var week2End = new Date(now); week2End.setDate(week2End.getDate()-7); week2End.setHours(23,59,59,999);
+
+  var thisWeek = bkRows.filter(function(r){ var d=new Date(r.date); return d>=week1Start&&d<=now; }).length;
+  var lastWeek = bkRows.filter(function(r){ var d=new Date(r.date); return d>=week2Start&&d<=week2End; }).length;
+  var leadsWeek = ldRows.filter(function(r){ var d=new Date(r.date); return d>=week1Start&&d<=now; }).length;
+  var wow = lastWeek>0 ? ((thisWeek-lastWeek)/lastWeek*100).toFixed(0) : '--';
+  var conv = leadsWeek>0 ? Math.round((thisWeek/leadsWeek)*100) : 0;
+
+  var s=function(id,v){var el=document.getElementById(id);if(el)el.textContent=v;};
+  s('kpi-this-week', thisWeek);
+  s('kpi-last-week', lastWeek);
+  s('kpi-wow', wow==='--'?'--':(wow>0?'+':'')+wow+'%');
+  s('kpi-leads-week', leadsWeek);
+  s('kpi-conv', conv+'%');
+
+  var wowEl = document.getElementById('kpi-wow');
+  if(wowEl && wow!=='--'){ wowEl.style.color = parseInt(wow)>=0?'var(--success)':'var(--danger)'; }
+}
+
+function svgBar(label, value, max, color, pctLabel){
+  var pct = max>0?Math.round((value/max)*100):0;
+  return '<div style="margin-bottom:10px">'+
+    '<div style="display:flex;justify-content:space-between;margin-bottom:4px">'+
+      '<span style="font-size:11px;color:var(--muted)">'+esc(label)+'</span>'+
+      '<span style="font-size:11px;font-weight:600;font-family:var(--mono)">'+value+(pctLabel?' ('+pct+'%)':'')+'</span>'+
+    '</div>'+
+    '<div style="height:8px;background:var(--surface2);border-radius:5px;overflow:hidden">'+
+      '<div style="width:'+pct+'%;height:100%;background:'+color+';border-radius:5px;transition:width .5s ease"></div>'+
+    '</div>'+
+  '</div>';
+}
+
+function buildBookingTrendChart(bkRows){
+  if(!bkRows.length) bkRows = syntheticBookings();
+  var body = document.getElementById('kpi-trend-body');
+  var title = document.getElementById('kpi-trend-title');
+  if(!body) return;
+
+  // Group by week or month
+  var grouped = {};
+  bkRows.forEach(function(r){
+    var key = kpiPeriod==='weekly' ? getWeekKey(r.date) : getMonthKey(r.date);
+    if(!key) return;
+    grouped[key] = (grouped[key]||0) + (r.bookings||1);
+  });
+  var keys = Object.keys(grouped).sort();
+  var lookback = kpiPeriod==='weekly'?10:10;
+  keys = keys.slice(-lookback);
+
+  if(title) title.textContent = (kpiPeriod==='weekly'?'📈 Booking Trend — Last 10 Weeks':'📈 Booking Trend — Last 10 Months');
+
+  if(!keys.length){ body.innerHTML='<div class="es">No booking data available</div>'; return; }
+
+  var maxVal = Math.max.apply(null, keys.map(function(k){ return grouped[k]; }));
+  var chartH = 140;
+  var w = 100 / keys.length;
+
+  // SVG bar chart
+  var svg = '<div style="overflow-x:auto"><div style="min-width:500px">';
+  svg += '<div style="display:flex;align-items:flex-end;gap:4px;height:'+chartH+'px;padding:0 4px">';
+  var colors = ['var(--accent)','var(--accent2)','var(--info)','var(--warn)','var(--success)'];
+  keys.forEach(function(k,i){
+    var val = grouped[k];
+    var barH = maxVal>0 ? Math.max(Math.round((val/maxVal)*chartH),4) : 4;
+    var isLast = i===keys.length-1;
+    svg += '<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">'+
+      '<span style="font-size:10px;font-weight:600;font-family:var(--mono);color:'+(isLast?'var(--accent2)':'var(--text)')+'">'+val+'</span>'+
+      '<div style="width:100%;height:'+barH+'px;background:'+(isLast?'var(--accent2)':'var(--accent)')+';border-radius:4px 4px 0 0;opacity:'+(isLast?1:0.65+(i/keys.length)*0.35)+';transition:height .5s"></div>'+
+    '</div>';
+  });
+  svg += '</div>';
+  // X labels
+  svg += '<div style="display:flex;gap:4px;padding:6px 4px 0;border-top:1px solid var(--border)">';
+  keys.forEach(function(k,i){
+    var lbl = kpiPeriod==='weekly' ? fmtWeek(k) : fmtMonth(k);
+    svg += '<div style="flex:1;text-align:center;font-size:9px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="'+esc(lbl)+'">'+esc(lbl)+'</div>';
+  });
+  svg += '</div></div></div>';
+  body.innerHTML = svg;
+}
+
+function buildServiceBreakdown(bkRows){
+  if(!bkRows.length) bkRows = syntheticBookings();
+  var body = document.getElementById('kpi-svc-body');
+  var trendBody = document.getElementById('kpi-svc-trend-body');
+  var periodEl = document.getElementById('kpi-svc-period');
+  if(!body) return;
+
+  // Current period service split
+  var now = new Date(); now.setHours(23,59,59,999);
+  var periodStart = new Date(now);
+  if(kpiPeriod==='weekly') periodStart.setDate(periodStart.getDate()-6);
+  else { periodStart = new Date(now.getFullYear(), now.getMonth(), 1); }
+  periodStart.setHours(0,0,0,0);
+
+  var periodRows = bkRows.filter(function(r){ var d=new Date(r.date); return d>=periodStart&&d<=now; });
+  var svcTally = {};
+  periodRows.forEach(function(r){ var s=r.service||r.category||'Unknown'; svcTally[s]=(svcTally[s]||0)+(r.bookings||1); });
+  var total = periodRows.length || 1;
+
+  var COLORS = ['var(--accent)','var(--accent2)','var(--info)','var(--warn)','var(--danger)'];
+  var services = Object.keys(svcTally).sort(function(a,b){ return svcTally[b]-svcTally[a]; });
+  var maxSvc = Math.max.apply(null, services.map(function(s){ return svcTally[s]; })) || 1;
+
+  if(!services.length){ body.innerHTML='<div class="es">No data for this period</div>'; }
+  else {
+    body.innerHTML = '<div style="padding:4px 0">'+
+      services.map(function(s,i){ return svgBar(s, svcTally[s], maxSvc, COLORS[i%COLORS.length], true); }).join('')+
+    '</div>';
+  }
+  if(periodEl) periodEl.textContent = kpiPeriod==='weekly'?'This week':'This month';
+
+  // Service trend across periods
+  if(!trendBody) return;
+  var grouped = {};
+  bkRows.forEach(function(r){
+    var key = kpiPeriod==='weekly' ? getWeekKey(r.date) : getMonthKey(r.date);
+    if(!key) return;
+    var svc = r.service||r.category||'Unknown';
+    if(!grouped[key]) grouped[key]={};
+    grouped[key][svc] = (grouped[key][svc]||0) + (r.bookings||1);
+  });
+  var periodKeys = Object.keys(grouped).sort().slice(-6);
+  var allSvcs = [];
+  periodKeys.forEach(function(k){ Object.keys(grouped[k]).forEach(function(s){ if(!allSvcs.includes(s)) allSvcs.push(s); }); });
+
+  if(!periodKeys.length){ trendBody.innerHTML='<div class="es">No trend data yet</div>'; return; }
+
+  // Stacked bar chart per period
+  var html = '<div style="overflow-x:auto"><div style="min-width:400px">';
+  html += '<div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">';
+  allSvcs.forEach(function(s,i){ html += '<div style="display:flex;align-items:center;gap:5px"><div style="width:10px;height:10px;border-radius:2px;background:'+COLORS[i%COLORS.length]+'"></div><span style="font-size:10px;color:var(--muted)">'+esc(s)+'</span></div>'; });
+  html += '</div>';
+  html += '<div style="display:flex;align-items:flex-end;gap:6px;height:120px">';
+  var maxPeriod = Math.max.apply(null, periodKeys.map(function(k){ return Object.values(grouped[k]).reduce(function(a,b){return a+b;},0); })) || 1;
+  periodKeys.forEach(function(k){
+    var periodTotal = Object.values(grouped[k]).reduce(function(a,b){return a+b;},0);
+    var pct = Math.max(Math.round((periodTotal/maxPeriod)*100),4);
+    html += '<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px">';
+    html += '<span style="font-size:10px;font-weight:600;font-family:var(--mono);color:var(--muted)">'+periodTotal+'</span>';
+    html += '<div style="width:100%;height:'+pct+'px;display:flex;flex-direction:column-reverse;border-radius:4px 4px 0 0;overflow:hidden">';
+    allSvcs.forEach(function(s,i){
+      var v = grouped[k][s]||0;
+      var sp = periodTotal>0?Math.round((v/periodTotal)*100):0;
+      if(sp>0) html += '<div style="height:'+sp+'%;background:'+COLORS[i%COLORS.length]+';flex-shrink:0" title="'+esc(s)+': '+v+'"></div>';
+    });
+    html += '</div>';
+    html += '<div style="font-size:8px;color:var(--muted);text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%">'+(kpiPeriod==='weekly'?fmtWeek(k).split('–')[0]:fmtMonth(k))+'</div>';
+    html += '</div>';
+  });
+  html += '</div></div></div>';
+  trendBody.innerHTML = html;
+}
+
+function buildLeadsCharts(ldRows, bkRows){
+  if(!ldRows.length) ldRows = syntheticLeads();
+  if(!bkRows.length) bkRows = syntheticBookings();
+
+  var trendBody = document.getElementById('kpi-leads-body');
+  var svcBody = document.getElementById('kpi-leads-svc-body');
+  if(!trendBody) return;
+
+  // Leads trend
+  var grouped = {};
+  ldRows.forEach(function(r){
+    var key = kpiPeriod==='weekly' ? getWeekKey(r.date) : getMonthKey(r.date);
+    if(!key) return;
+    grouped[key] = (grouped[key]||0)+1;
+  });
+  var bkGrouped = {};
+  bkRows.forEach(function(r){
+    var key = kpiPeriod==='weekly' ? getWeekKey(r.date) : getMonthKey(r.date);
+    if(!key) return;
+    bkGrouped[key] = (bkGrouped[key]||0)+(r.bookings||1);
+  });
+  var keys = Array.from(new Set(Object.keys(grouped).concat(Object.keys(bkGrouped)))).sort().slice(-10);
+  var maxVal = Math.max.apply(null, keys.map(function(k){ return Math.max(grouped[k]||0, bkGrouped[k]||0); })) || 1;
+  var chartH = 120;
+
+  var html = '<div style="overflow-x:auto"><div style="min-width:400px">';
+  html += '<div style="display:flex;gap:10px;margin-bottom:10px"><div style="display:flex;align-items:center;gap:5px"><div style="width:10px;height:10px;border-radius:2px;background:var(--info)"></div><span style="font-size:10px;color:var(--muted)">Leads</span></div><div style="display:flex;align-items:center;gap:5px"><div style="width:10px;height:10px;border-radius:2px;background:var(--accent2)"></div><span style="font-size:10px;color:var(--muted)">Bookings</span></div></div>';
+  html += '<div style="display:flex;align-items:flex-end;gap:3px;height:'+chartH+'px">';
+  keys.forEach(function(k){
+    var leads = grouped[k]||0;
+    var bks = bkGrouped[k]||0;
+    var lH = Math.max(Math.round((leads/maxVal)*chartH),2);
+    var bH = Math.max(Math.round((bks/maxVal)*chartH),2);
+    html += '<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px">'+
+      '<div style="width:100%;display:flex;gap:1px;align-items:flex-end;height:'+(chartH-14)+'px">'+
+        '<div style="flex:1;height:'+lH+'px;background:var(--info);border-radius:3px 3px 0 0;opacity:.8"></div>'+
+        '<div style="flex:1;height:'+bH+'px;background:var(--accent2);border-radius:3px 3px 0 0;opacity:.8"></div>'+
+      '</div>'+
+      '<div style="font-size:8px;color:var(--muted);text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%">'+(kpiPeriod==='weekly'?fmtWeek(k).split('–')[0]:fmtMonth(k))+'</div>'+
+    '</div>';
+  });
+  html += '</div></div></div>';
+  trendBody.innerHTML = html;
+
+  // Leads by service
+  if(!svcBody) return;
+  var COLORS = ['var(--accent)','var(--accent2)','var(--info)','var(--warn)','var(--danger)'];
+  var now = new Date(); now.setHours(23,59,59,999);
+  var pStart = new Date(now);
+  if(kpiPeriod==='weekly') pStart.setDate(pStart.getDate()-6);
+  else { pStart = new Date(now.getFullYear(), now.getMonth(), 1); }
+  pStart.setHours(0,0,0,0);
+
+  var pRows = ldRows.filter(function(r){ var d=new Date(r.date); return d>=pStart&&d<=now; });
+  var svcT = {};
+  pRows.forEach(function(r){ var s=r.service||'Unknown'; svcT[s]=(svcT[s]||0)+1; });
+  var svcs = Object.keys(svcT).sort(function(a,b){ return svcT[b]-svcT[a]; });
+  var maxS = Math.max.apply(null, svcs.map(function(s){ return svcT[s]; })) || 1;
+  if(!svcs.length){ svcBody.innerHTML='<div class="es">No lead data this period</div>'; return; }
+  svcBody.innerHTML = '<div style="padding:4px 0">'+svcs.map(function(s,i){ return svgBar(s, svcT[s], maxS, COLORS[i%COLORS.length], true); }).join('')+'</div>';
+}
+
+
+// ===================== KNOWLEDGE BASE =====================
+var knowledgeBase = load('knowledge_base', []);
+function saveKB(){ store('knowledge_base', knowledgeBase); updateKBIndicator(); }
+
+var KB_CAT_LABELS = {complaint:'Complaint',reschedule:'Reschedule',refund:'Refund',review:'Review Response',staff:'Staff Issue',other:'Other'};
+var KB_CAT_COLORS = {complaint:'var(--danger)',reschedule:'var(--warn)',refund:'var(--info)',review:'var(--accent)',staff:'var(--accent2)',other:'var(--muted)'};
+var KB_OUTCOME_ICONS = {positive:'✅',neutral:'➖',negative:'❌'};
+
+function updateKBIndicator(){
+  var cnt = knowledgeBase.length;
+  var indic = document.getElementById('ai-kb-indicator');
+  var cntEl = document.getElementById('ai-kb-count');
+  if(cntEl) cntEl.textContent = cnt;
+  if(indic) indic.style.display = cnt>0?'block':'none';
+}
+
+function addKBEntry(){
+  var title = document.getElementById('kb-title').value.trim();
+  var situation = document.getElementById('kb-situation').value.trim();
+  var resolution = document.getElementById('kb-resolution').value.trim();
+  if(!title||!situation||!resolution){ alert('Please fill in Title, Situation, and Resolution.'); return; }
+  var entry = {
+    id: Date.now(),
+    category: document.getElementById('kb-cat').value,
+    title: title,
+    situation: situation,
+    resolution: resolution,
+    outcome: document.getElementById('kb-outcome').value,
+    tags: document.getElementById('kb-tags').value.split(',').map(function(t){return t.trim();}).filter(Boolean),
+    date: new Date().toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'}),
+    addedBy: currentUser||'Unknown'
+  };
+  knowledgeBase.unshift(entry);
+  saveKB(); renderKB();
+  // Reset
+  ['kb-title','kb-situation','kb-resolution','kb-tags'].forEach(function(id){ var el=document.getElementById(id); if(el)el.value=''; });
+  document.getElementById('kb-cat').value='complaint';
+  document.getElementById('kb-outcome').value='positive';
+  logAction('other','Added KB scenario: "'+title.slice(0,60)+'"');
+}
+
+function deleteKBEntry(id){
+  if(confirm('Remove this scenario from the Knowledge Base?')){
+    knowledgeBase = knowledgeBase.filter(function(e){ return e.id!==id; });
+    saveKB(); renderKB();
+  }
+}
+
+function saveToKB(){
+  // Pre-fill KB form from current AI session
+  var situation = (document.getElementById('ai-text')||{}).value||'';
+  var ctx = (document.getElementById('ai-ctx')||{}).value||'';
+  var response = (document.getElementById('ai-out')||{}).textContent||'';
+  var cat = (document.getElementById('ai-cat')||{}).value||'complaint';
+
+  document.getElementById('kb-cat').value = cat;
+  document.getElementById('kb-situation').value = (ctx?ctx+'\n\n':'')+situation;
+  document.getElementById('kb-resolution').value = response.slice(0,1000);
+  document.getElementById('kb-title').value = situation.slice(0,80);
+  showTab('ai-kb');
+  setTimeout(function(){ document.getElementById('kb-title').focus(); }, 100);
+}
+
+function renderKB(){
+  var list = document.getElementById('kb-list');
+  if(!list) return;
+  var q = (document.getElementById('kb-search')||{}).value||''; q=q.trim().toLowerCase();
+  var fCat = (document.getElementById('kb-filt-cat')||{}).value||'';
+  var fOut = (document.getElementById('kb-filt-outcome')||{}).value||'';
+  var cntLbl = document.getElementById('kb-count-lbl');
+
+  var rows = knowledgeBase;
+  if(q) rows = rows.filter(function(e){ return (e.title+e.situation+e.resolution+(e.tags||[]).join(',')).toLowerCase().indexOf(q)>-1; });
+  if(fCat) rows = rows.filter(function(e){ return e.category===fCat; });
+  if(fOut) rows = rows.filter(function(e){ return e.outcome===fOut; });
+  if(cntLbl) cntLbl.textContent = rows.length+' of '+knowledgeBase.length+' scenarios';
+
+  if(!rows.length){ list.innerHTML='<div class="es">No scenarios match your filters.</div>'; return; }
+
+  list.innerHTML = rows.map(function(e){
+    var catColor = KB_CAT_COLORS[e.category]||'var(--muted)';
+    var outcomeIcon = KB_OUTCOME_ICONS[e.outcome]||'';
+    return '<div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;border-left:3px solid '+catColor+';overflow:hidden">'+
+      '<div style="padding:12px 14px;display:flex;align-items:flex-start;justify-content:space-between;gap:10px">'+
+        '<div style="flex:1">'+
+          '<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">'+
+            '<span style="font-size:10px;padding:2px 7px;border-radius:4px;background:var(--surface2);border:1px solid var(--border);color:'+catColor+';font-weight:600">'+esc(KB_CAT_LABELS[e.category]||e.category)+'</span>'+
+            '<span style="font-size:12px">'+outcomeIcon+'</span>'+
+            (e.tags&&e.tags.length?e.tags.slice(0,3).map(function(t){return '<span class="tag">'+esc(t)+'</span>';}).join(' '):'')+''+
+            '<span style="font-size:10px;color:var(--muted);margin-left:auto;font-family:var(--mono)">'+esc(e.date)+'</span>'+
+          '</div>'+
+          '<div style="font-weight:600;margin-bottom:6px">'+esc(e.title)+'</div>'+
+          '<div style="font-size:12px;color:var(--muted);margin-bottom:4px"><strong style="color:var(--text)">Situation:</strong> '+esc(e.situation.slice(0,200))+(e.situation.length>200?'…':'')+'</div>'+
+          '<div style="font-size:12px;color:var(--muted)"><strong style="color:var(--accent2)">Resolution:</strong> '+esc(e.resolution.slice(0,200))+(e.resolution.length>200?'…':'')+'</div>'+
+        '</div>'+
+        '<button class="ibtn" onclick="deleteKBEntry('+e.id+')" style="color:var(--danger);flex-shrink:0" title="Remove">✕</button>'+
+      '</div>'+
+    '</div>';
+  }).join('');
+}
+
+function exportKB(){
+  var json = JSON.stringify(knowledgeBase, null, 2);
+  var blob = new Blob([json], {type:'application/json'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a'); a.href=url; a.download='schmicko_knowledge_base.json'; a.click();
+  setTimeout(function(){URL.revokeObjectURL(url);},1000);
+}
+
+function importKB(input){
+  var file = input.files[0]; if(!file) return;
+  var reader = new FileReader();
+  reader.onload = function(e){
+    try{
+      var data = JSON.parse(e.target.result);
+      if(!Array.isArray(data)){ alert('Invalid KB file — expected a JSON array.'); return; }
+      var added = 0;
+      var existingIds = knowledgeBase.map(function(x){ return x.id; });
+      data.forEach(function(item){
+        if(!existingIds.includes(item.id)){ knowledgeBase.push(item); added++; }
+      });
+      saveKB(); renderKB();
+      alert('Imported '+added+' new scenarios. Total: '+knowledgeBase.length);
+    }catch(err){ alert('Could not parse file: '+err.message); }
+  };
+  reader.readAsText(file);
+  input.value='';
+}
+
+// ===================== AI ASSIST (upgraded with KB context) =====================
+var cHistory = load('complaint_history',[]);
+
+async function analyseComplaint(){
+  var text = document.getElementById('ai-text').value.trim();
+  var ctx = document.getElementById('ai-ctx').value.trim();
+  var cat = document.getElementById('ai-cat').value;
+  if(!text){ alert('Please describe the situation first.'); return; }
+
+  document.getElementById('ai-out').style.display='none';
+  var saveRow = document.getElementById('ai-save-kb-row');
+  if(saveRow) saveRow.style.display='none';
+  document.getElementById('ai-think').style.display='flex';
+
+  // Build KB context — find relevant scenarios (same category or keyword match)
+  var relevantKB = knowledgeBase.filter(function(e){
+    return e.category===cat ||
+      (e.title+e.situation).toLowerCase().split(' ').some(function(w){ return w.length>4&&text.toLowerCase().indexOf(w)>-1; });
+  }).slice(0,6);
+
+  var kbContext = relevantKB.length
+    ? '\n\n=== PAST SCENARIOS FROM OUR KNOWLEDGE BASE ===\nUse these as reference for how this business has handled similar situations:\n'+
+      relevantKB.map(function(e,i){
+        return (i+1)+'. ['+KB_CAT_LABELS[e.category]+'] '+e.title+'\n   Situation: '+e.situation.slice(0,200)+'\n   Resolution: '+e.resolution.slice(0,200)+'\n   Outcome: '+KB_OUTCOME_ICONS[e.outcome]+' '+e.outcome;
+      }).join('\n\n')
+    : '';
+
+  var prompt = 'You are an internal business advisor for Schmicko — a mobile car wash and auto services company in Australia. Help handle the following business situation.\n\n'+
+    'Your advice should:\n'+
+    '1. Summarise the core issue in 1-2 sentences\n'+
+    '2. Recommend a specific response strategy (defend the business where fair, but prioritise keeping the customer relationship)\n'+
+    '3. Provide a suggested word-for-word response or action plan\n'+
+    '4. Flag any reputation, legal, or repeat-business risks\n\n'+
+    'Category: '+cat+'\n'+
+    (ctx?'Context: '+ctx+'\n':'')+
+    'Situation:\n"'+text+'"'+
+    kbContext+
+    '\n\nBe concise and practical. Use bullet points where helpful. Tailor advice to a small Australian service business.';
+
+  try{
+    var res = await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1200,messages:[{role:'user',content:prompt}]})
+    });
+    var data = await res.json();
+    var reply = (data.content&&data.content[0]&&data.content[0].text)||'No response received.';
+    document.getElementById('ai-think').style.display='none';
+    document.getElementById('ai-out').style.display='block';
+    document.getElementById('ai-out').textContent=reply;
+    if(saveRow) saveRow.style.display='flex';
+
+    // Save to session history
+    cHistory.unshift({id:Date.now(),complaint:text,context:ctx,category:cat,resolution:reply,date:new Date().toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'})});
+    if(cHistory.length>100) cHistory=cHistory.slice(0,100);
+    store('complaint_history',cHistory);
+    renderHistory();
+  }catch(e){
+    document.getElementById('ai-think').style.display='none';
+    document.getElementById('ai-out').style.display='block';
+    document.getElementById('ai-out').textContent='Error: '+e.message;
+  }
+}
+
+function clearComplaint(){
+  document.getElementById('ai-text').value='';
+  document.getElementById('ai-ctx').value='';
+  document.getElementById('ai-out').style.display='none';
+  document.getElementById('ai-think').style.display='none';
+  var saveRow=document.getElementById('ai-save-kb-row'); if(saveRow)saveRow.style.display='none';
+}
+
+function renderHistory(){
+  var el=document.getElementById('hist-list');
+  var countEl=document.getElementById('hist-count');
+  if(countEl)countEl.textContent=cHistory.length+' saved';
+  if(!el)return;
+  if(!cHistory.length){el.innerHTML='<div class="es" style="padding:20px">No history yet.</div>';return;}
+  el.innerHTML=cHistory.map(function(h){
+    var catColor=KB_CAT_COLORS[h.category]||'var(--muted)';
+    return '<div class="hist-item" onclick="loadHist('+h.id+')" style="border-left:2px solid '+catColor+'">'+
+      '<div style="font-size:12px;font-weight:600;margin-bottom:4px;display:flex;justify-content:space-between;gap:8px">'+
+        '<span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+esc((h.context||h.category||'Session').slice(0,40))+'</span>'+
+        '<span style="color:var(--muted);font-size:10px;font-family:var(--mono);flex-shrink:0">'+h.date+'</span>'+
+      '</div>'+
+      '<div style="font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+esc(h.complaint.slice(0,100))+'</div>'+
+    '</div>';
+  }).join('');
+}
+
+function loadHist(id){
+  var h=cHistory.find(function(x){return x.id===id;});if(!h)return;
+  document.getElementById('ai-text').value=h.complaint;
+  document.getElementById('ai-ctx').value=h.context||'';
+  if(h.category)document.getElementById('ai-cat').value=h.category;
+  document.getElementById('ai-out').textContent=h.resolution;
+  document.getElementById('ai-out').style.display='block';
+  var saveRow=document.getElementById('ai-save-kb-row');if(saveRow)saveRow.style.display='flex';
+  showTab('ai-complaints');
+}
+
+function loadKB(){
+  var url=load('url_kb','');
+  if(!url){alert('Paste a URL first.');return;}
+  document.getElementById('kb-embed').innerHTML='<iframe src="'+url+'" style="width:100%;height:600px;border:none;display:block" allowfullscreen></iframe>';
+}
+
+// ===================== UNASSIGNED BOOKINGS =====================
+var allUnassigned = [];
+var uaFilter = 'all';
+
+async function fetchUnassigned(){
+  var url = load('url_unassigned','');
+  // Try bookings URL with action param as fallback
+  if(!url){ url = load('url_bookings',''); if(url) url += (url.indexOf('?')>-1?'&':'?')+'action=unassigned'; }
+  if(!url){ alert('Add an Unassigned Bookings script URL in the setup box above.'); return; }
+  var spin=document.getElementById('ua-spin'); if(spin)spin.classList.add('spinning');
+  var lbl=document.getElementById('ua-last-sync');
+  try{
+    var res=await fetch(url);
+    var data=await res.json();
+    if(data.error){alert('Error: '+data.error);return;}
+    allUnassigned = data.bookings||data.unassigned||data.rows||[];
+    renderUnassigned();
+    var badge=document.getElementById('unassigned-badge');
+    if(badge)badge.textContent=allUnassigned.length;
+    if(lbl)lbl.textContent='Last sync: '+new Date().toLocaleTimeString('en-AU',{hour:'2-digit',minute:'2-digit'});
+    // Notify if any are today
+    var todayCount=allUnassigned.filter(function(b){ return isToday(b.booking_date||b.date); }).length;
+    if(todayCount>0)sendNotif('Unassigned Bookings',todayCount+' unassigned booking'+(todayCount>1?'s':'')+' are scheduled for today!');
+  }catch(e){
+    // Show demo data if no URL configured
+    allUnassigned = demoUnassigned();
+    renderUnassigned();
+    if(lbl)lbl.textContent='Demo mode — connect your sheet';
+  }finally{ if(spin)spin.classList.remove('spinning'); }
+}
+
+function isToday(dateStr){
+  if(!dateStr)return false;
+  var d=new Date(dateStr); var now=new Date();
+  return d.getFullYear()===now.getFullYear()&&d.getMonth()===now.getMonth()&&d.getDate()===now.getDate();
+}
+function isTomorrow(dateStr){
+  if(!dateStr)return false;
+  var d=new Date(dateStr); var now=new Date(); var tom=new Date(now); tom.setDate(tom.getDate()+1);
+  return d.getFullYear()===tom.getFullYear()&&d.getMonth()===tom.getMonth()&&d.getDate()===tom.getDate();
+}
+function isThisWeek(dateStr){
+  if(!dateStr)return false;
+  var d=new Date(dateStr); var now=new Date();
+  var end=new Date(now); end.setDate(end.getDate()+7);
+  return d>=now&&d<=end;
+}
+
+function demoUnassigned(){
+  var services=['Car Detailing','Dash Cam','Window Tinting','Roof Lining'];
+  var suburbs=['Mosman','Bondi','Chatswood','Parramatta','Randwick','Manly'];
+  var names=['Alex Chen','Sarah Williams','Tom Nguyen','Emma Smith','Jack Davis','Lily Brown'];
+  var result=[];
+  for(var i=0;i<8;i++){
+    var d=new Date(); d.setDate(d.getDate()+Math.floor(i/3));
+    result.push({
+      id:'DEMO-'+(1001+i),
+      customer_name:names[i%names.length],
+      service:services[i%services.length],
+      booking_date:d.toISOString().slice(0,10),
+      suburb:suburbs[i%suburbs.length],
+      created_at:new Date(Date.now()-i*3600000).toISOString(),
+      notes:i%3===0?'Pet at home — inform tech':''
+    });
+  }
+  return result;
+}
+
+function setUAFilter(f){
+  uaFilter=f;
+  ['ua-fall','ua-ftoday','ua-ftomorrow','ua-fweek'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el){el.style.borderColor='var(--border)';el.style.color='var(--muted)';}
+  });
+  var map={all:'ua-fall',today:'ua-ftoday',tomorrow:'ua-ftomorrow',week:'ua-fweek'};
+  var active=document.getElementById(map[f]);
+  if(active){active.style.borderColor='var(--accent)';active.style.color='var(--accent)';}
+  renderUnassigned();
+}
+
+function filterUnassigned(){ renderUnassigned(); }
+
+function renderUnassigned(){
+  var tbody=document.getElementById('ua-tbody');
+  var empty=document.getElementById('ua-empty');
+  var cntLbl=document.getElementById('ua-count-lbl');
+  var q=(document.getElementById('ua-search')||{}).value||''; q=q.trim().toLowerCase();
+
+  var now=new Date();
+  var todayBks=allUnassigned.filter(function(b){return isToday(b.booking_date||b.date);});
+  var tomBks=allUnassigned.filter(function(b){return isTomorrow(b.booking_date||b.date);});
+  var weekBks=allUnassigned.filter(function(b){return isThisWeek(b.booking_date||b.date);});
+
+  // Update stats
+  var s=function(id,v){var el=document.getElementById(id);if(el)el.textContent=v;};
+  s('ua-count',allUnassigned.length);
+  s('ua-today',todayBks.length);
+  s('ua-tomorrow',tomBks.length);
+  s('ua-week',weekBks.length);
+
+  // Alert
+  var alert=document.getElementById('ua-alert');
+  var alertMsg=document.getElementById('ua-alert-msg');
+  if(alert){
+    if(todayBks.length>0){
+      alert.style.display='flex';
+      if(alertMsg)alertMsg.textContent=todayBks.length+' unassigned booking'+(todayBks.length>1?'s are':' is')+' scheduled for TODAY — assign now!';
+    } else { alert.style.display='none'; }
+  }
+
+  var rows=allUnassigned;
+  if(uaFilter==='today') rows=todayBks;
+  else if(uaFilter==='tomorrow') rows=tomBks;
+  else if(uaFilter==='week') rows=weekBks;
+  if(q) rows=rows.filter(function(b){return (b.customer_name||'').toLowerCase().indexOf(q)>-1||(b.service||'').toLowerCase().indexOf(q)>-1||(b.suburb||'').toLowerCase().indexOf(q)>-1;});
+
+  if(cntLbl)cntLbl.textContent=rows.length+' booking'+(rows.length!==1?'s':'');
+  if(!rows.length){if(tbody)tbody.innerHTML='';if(empty)empty.style.display='block';return;}
+  if(empty)empty.style.display='none';
+
+  tbody.innerHTML=rows.map(function(b){
+    var dateStr=b.booking_date||b.date||'';
+    var dateTxt=dateStr?new Date(dateStr).toLocaleDateString('en-AU',{weekday:'short',day:'numeric',month:'short',year:'numeric'}):'--';
+    var d=new Date(dateStr); var today=new Date(); today.setHours(0,0,0,0); d.setHours(0,0,0,0);
+    var daysUntil=Math.round((d-today)/(1000*60*60*24));
+    var urgency=daysUntil<=0?'color:var(--danger);font-weight:700':daysUntil===1?'color:var(--warn);font-weight:600':'color:var(--muted)';
+    var urgencyTxt=daysUntil<0?'Overdue!':daysUntil===0?'Today!':daysUntil===1?'Tomorrow':daysUntil+' days';
+    return '<tr>'+
+      '<td style="font-weight:600">'+esc(b.customer_name||'Unknown')+'</td>'+
+      '<td><span class="tag">'+esc(b.service||'--')+'</span></td>'+
+      '<td style="font-family:var(--mono);font-size:11px;color:var(--muted)">'+dateTxt+'</td>'+
+      '<td style="color:var(--muted)">'+esc(b.suburb||'--')+'</td>'+
+      '<td style="max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted);font-size:11px" title="'+esc(b.notes||'')+'">'+esc(b.notes||'--')+'</td>'+
+      '<td style="'+urgency+';font-family:var(--mono);font-size:12px">'+urgencyTxt+'</td>'+
+      '<td><button class="btn sm" onclick="addTaskFromUnassigned(\''+esc(b.customer_name)+'\',\''+esc(b.service)+'\',\''+esc(dateStr)+'\')" style="font-size:10px;padding:4px 8px">➕ Add Task</button></td>'+
+    '</tr>';
+  }).join('');
+}
+
+function addTaskFromUnassigned(name, service, bookingDate){
+  var task='Assign technician for '+name+' ('+service+') — booking '+new Date(bookingDate).toLocaleDateString('en-AU',{day:'numeric',month:'short'});
+  todos.unshift({id:Date.now(),text:task,assignee:'',due:bookingDate,priority:'urgent',done:false,created:new Date().toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'})});
+  saveTodos();renderTodos();
+  sendNotif('Task Added','Assign tech task created for '+name);
+  // Flash todo badge
+  var badge=document.getElementById('todo-badge');
+  if(badge){badge.style.background='var(--danger)';setTimeout(function(){badge.style.background='';},2000);}
+}
+
+// Auto-refresh unassigned every 5 min
+setInterval(function(){
+  if(load('url_unassigned','')) fetchUnassigned();
+}, 5*60*1000);
+
+// ===================== BOOKING FOLLOW-UP RULES =====================
+var bookingRules = load('booking_rules', []);
+var ruleLog = load('rule_log', []);
+var processedBookingIds = load('processed_booking_ids', {});
+
+var PRESET_RULES = [
+  {field:'dash_cam_brand',condition:'equals',value:'Other',task:'Follow up: confirm dash cam model for {customer_name} (booking {booking_date})',priority:'high',dueDays:1},
+  {field:'parking_type',condition:'equals',value:'Street',task:'Confirm street parking permit for {customer_name} — {booking_date} in {suburb}',priority:'normal',dueDays:1},
+  {field:'parking_type',condition:'equals',value:'Other',task:'Clarify parking access for {customer_name} booking on {booking_date}',priority:'high',dueDays:1},
+  {field:'car_condition',condition:'equals',value:'Very dirty',task:'Heads up: {customer_name} flagged Very dirty — prep tech for heavy detail on {booking_date}',priority:'high',dueDays:1},
+  {field:'special_requests',condition:'not_empty',value:'',task:'Customer special request for {customer_name} on {booking_date} — review notes',priority:'normal',dueDays:1},
+  {field:'coupon_code',condition:'not_empty',value:'',task:'Verify coupon code for {customer_name} booking on {booking_date}',priority:'normal',dueDays:2},
+  {field:'pet_at_home',condition:'equals',value:'Yes',task:'Inform tech: pet at home for {customer_name} on {booking_date}',priority:'normal',dueDays:1},
+  {field:'interior_condition',condition:'equals',value:'Heavy soiling',task:'Extra time needed: heavy interior soiling for {customer_name} on {booking_date}',priority:'high',dueDays:1},
+];
+
+function saveRules(){ store('booking_rules', bookingRules); store('rule_log', ruleLog.slice(0,200)); store('processed_booking_ids', processedBookingIds); }
+
+function openRuleForm(){
+  document.getElementById('rule-form').style.display='block';
+  // Populate assign dropdown from team members
+  var sel=document.getElementById('rule-assign');
+  if(sel){ sel.innerHTML='<option value="">Unassigned</option>'+teamMembers.map(function(m){return '<option value="'+esc(m)+'">'+esc(m)+'</option>';}).join(''); }
+  // Live preview
+  ['rule-field','rule-value','rule-task','rule-assign','rule-priority'].forEach(function(id){
+    var el=document.getElementById(id); if(el) el.addEventListener('input',updateRulePreview);
+    if(el) el.addEventListener('change',updateRulePreview);
+  });
+  document.getElementById('rule-condition').addEventListener('change',updateRulePreview);
+  setTimeout(function(){document.getElementById('rule-field').focus();},50);
+}
+function closeRuleForm(){ document.getElementById('rule-form').style.display='none'; }
+
+function updateRulePreview(){
+  var f=document.getElementById('rule-field').value||'field';
+  var c=document.getElementById('rule-condition');
+  var condTxt = c ? c.options[c.selectedIndex].text : 'equals';
+  var v=document.getElementById('rule-value').value||'value';
+  var t=document.getElementById('rule-task').value||'task description';
+  var a=document.getElementById('rule-assign');
+  var aTxt=a&&a.value?(a.options[a.selectedIndex].text):'Unassigned';
+  var p=document.getElementById('rule-priority');
+  var pTxt=p?p.options[p.selectedIndex].text:'Normal';
+  var s=function(id,v){var el=document.getElementById(id);if(el)el.textContent=v;};
+  s('rule-preview-field',f); s('rule-preview-cond',condTxt); s('rule-preview-val','"'+v+'"');
+  s('rule-preview-task',t); s('rule-preview-assign',aTxt); s('rule-preview-pri',pTxt);
+}
+
+function saveRule(){
+  var field=document.getElementById('rule-field').value.trim();
+  var task=document.getElementById('rule-task').value.trim();
+  if(!field||!task){alert('Please fill in Field Name and Task Description.');return;}
+  var rule={
+    id:Date.now(),
+    field:field,
+    condition:document.getElementById('rule-condition').value,
+    value:document.getElementById('rule-value').value.trim(),
+    task:task,
+    assignee:document.getElementById('rule-assign').value,
+    priority:document.getElementById('rule-priority').value,
+    dueDays:parseInt(document.getElementById('rule-due-days').value)||1,
+    triggered:0,
+    active:true
+  };
+  bookingRules.unshift(rule);
+  saveRules();renderRules();closeRuleForm();
+  logAction('other','Added booking rule: IF '+field+' '+rule.condition+' "'+rule.value+'"');
+}
+
+function addPresetRule(idx){
+  var p=PRESET_RULES[idx];
+  var rule={id:Date.now(),field:p.field,condition:p.condition,value:p.value,task:p.task,assignee:'',priority:p.priority,dueDays:p.dueDays,triggered:0,active:true};
+  bookingRules.unshift(rule);
+  saveRules();renderRules();
+  sendNotif('Rule Added','Rule for "'+p.field+'" added to Booking Rules');
+}
+
+function deleteRule(id){
+  if(confirm('Delete this rule?')){ bookingRules=bookingRules.filter(function(r){return r.id!==id;}); saveRules();renderRules(); }
+}
+function toggleRule(id){
+  var r=bookingRules.find(function(x){return x.id===id;}); if(r)r.active=!r.active; saveRules();renderRules();
+}
+function clearRuleLog(){ ruleLog=[]; saveRules(); renderRules(); }
+
+var COND_LABELS={equals:'=',contains:'contains',not_empty:'≠ empty',is_empty:'= empty',not_equals:'≠'};
+
+function renderRules(){
+  // Preset suggestions
+  var presetList=document.getElementById('preset-rules-list');
+  if(presetList){
+    presetList.innerHTML=PRESET_RULES.map(function(p,i){
+      var alreadyExists=bookingRules.some(function(r){return r.field===p.field&&r.condition===p.condition&&r.value===p.value;});
+      return '<button onclick="addPresetRule('+i+')" '+(alreadyExists?'disabled':'')+' style="padding:6px 12px;border-radius:6px;border:1px solid '+(alreadyExists?'var(--border)':'rgba(124,106,247,.3)')+';background:'+(alreadyExists?'var(--surface2)':'rgba(124,106,247,.08)')+';color:'+(alreadyExists?'var(--muted)':'var(--accent)')+';font-size:11px;cursor:'+(alreadyExists?'default':'pointer')+';font-family:var(--font)">'+
+        (alreadyExists?'✓ ':'⚡ ')+esc(p.field)+' '+COND_LABELS[p.condition]+' "'+esc(p.value||'any')+'"'+
+      '</button>';
+    }).join('');
+  }
+
+  // Rules count
+  var cntEl=document.getElementById('rules-count-lbl');
+  if(cntEl)cntEl.textContent=bookingRules.length+' rule'+(bookingRules.length!==1?'s':'');
+
+  // Table
+  var tbody=document.getElementById('rules-tbody');
+  var empty=document.getElementById('rules-empty');
+  if(!bookingRules.length){if(tbody)tbody.innerHTML='';if(empty)empty.style.display='block';return;}
+  if(empty)empty.style.display='none';
+  tbody.innerHTML=bookingRules.map(function(r){
+    return '<tr style="opacity:'+(r.active?1:0.45)+'">'+
+      '<td style="font-family:var(--mono);font-size:11px;color:var(--accent)">'+esc(r.field)+'</td>'+
+      '<td style="color:var(--warn);font-size:11px">'+esc(COND_LABELS[r.condition]||r.condition)+'</td>'+
+      '<td style="font-family:var(--mono);font-size:11px">'+esc(r.value||'—')+'</td>'+
+      '<td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px" title="'+esc(r.task)+'">'+esc(r.task)+'</td>'+
+      '<td>'+(r.assignee?'<span class="tag">'+esc(r.assignee)+'</span>':'<span style="color:var(--muted)">--</span>')+'</td>'+
+      '<td style="font-size:11px;color:'+(r.priority==='urgent'?'var(--danger)':r.priority==='high'?'var(--warn)':'var(--muted)')+'">'+r.priority+'</td>'+
+      '<td style="font-size:11px;color:var(--muted)">'+r.dueDays+'d</td>'+
+      '<td style="font-family:var(--mono);font-size:11px;color:var(--accent2)">'+r.triggered+'</td>'+
+      '<td><div style="display:flex;gap:4px">'+
+        '<button class="ibtn" onclick="toggleRule('+r.id+')" title="'+(r.active?'Pause':'Enable')+'" style="color:'+(r.active?'var(--success)':'var(--muted)')+'">'+
+          (r.active?'●':'○')+'</button>'+
+        '<button class="ibtn" onclick="deleteRule('+r.id+')" style="color:var(--danger)">✕</button>'+
+      '</div></td>'+
+    '</tr>';
+  }).join('');
+
+  // Rule log
+  var logBody=document.getElementById('rule-log-body');
+  if(!logBody)return;
+  if(!ruleLog.length){logBody.innerHTML='<div class="es" style="padding:16px">No rules have run yet.</div>';return;}
+  logBody.innerHTML=ruleLog.slice(0,50).map(function(l){
+    return '<div style="padding:8px 14px;border-bottom:1px solid rgba(255,255,255,.03);font-size:12px;display:flex;align-items:center;gap:10px">'+
+      '<span style="font-size:16px">'+(l.matched?'⚡':'✓')+'</span>'+
+      '<div style="flex:1"><span style="font-weight:600">'+esc(l.rule)+'</span><span style="color:var(--muted);margin-left:6px">'+esc(l.booking)+'</span></div>'+
+      '<span style="font-size:10px;color:var(--muted);font-family:var(--mono);white-space:nowrap">'+esc(l.time)+'</span>'+
+    '</div>';
+  }).join('');
+}
+
+function runRulesNow(){
+  // Get current booking data
+  var bookings = window._bkData ? (window._bkData.detailed_rows||window._bkData.raw_rows||window._bkData.rows||[]) : [];
+  if(!bookings.length){ alert('No booking data loaded yet. Refresh your Bookings/KPI tab first.'); return; }
+
+  var tasksCreated=0;
+  var activeRules=bookingRules.filter(function(r){return r.active;});
+
+  bookings.forEach(function(booking){
+    var bkId=String(booking.id||booking.booking_id||booking.order_id||'');
+
+    activeRules.forEach(function(rule){
+      var ruleKey=bkId+'::'+rule.id;
+      if(processedBookingIds[ruleKey]) return; // already processed
+
+      var fieldVal=String(booking[rule.field]||booking[rule.field.replace(/_/g,' ')]||'').trim();
+      var matched=false;
+
+      switch(rule.condition){
+        case 'equals': matched=fieldVal.toLowerCase()===rule.value.toLowerCase(); break;
+        case 'not_equals': matched=fieldVal.toLowerCase()!==rule.value.toLowerCase()&&fieldVal!==''; break;
+        case 'contains': matched=fieldVal.toLowerCase().indexOf(rule.value.toLowerCase())>-1; break;
+        case 'not_empty': matched=fieldVal!==''; break;
+        case 'is_empty': matched=fieldVal===''; break;
+      }
+
+      if(matched){
+        // Substitute placeholders
+        var taskText=rule.task
+          .replace(/\{customer_name\}/g,booking.customer_name||booking.name||'Customer')
+          .replace(/\{service\}/g,booking.service||booking.category||'')
+          .replace(/\{booking_date\}/g,booking.booking_date||booking.date||'')
+          .replace(/\{suburb\}/g,booking.suburb||booking.address||'');
+
+        var dueDate=new Date(); dueDate.setDate(dueDate.getDate()+rule.dueDays);
+
+        todos.unshift({
+          id:Date.now()+Math.random(),
+          text:taskText,
+          assignee:rule.assignee||'',
+          due:dueDate.toISOString().slice(0,10),
+          priority:rule.priority,
+          done:false,
+          created:new Date().toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'}),
+          auto:true
+        });
+        tasksCreated++;
+        rule.triggered=(rule.triggered||0)+1;
+        processedBookingIds[ruleKey]=true;
+        ruleLog.unshift({time:new Date().toLocaleTimeString('en-AU',{hour:'2-digit',minute:'2-digit'}),rule:rule.field+' '+COND_LABELS[rule.condition]+' "'+rule.value+'"',booking:booking.customer_name||'Booking',matched:true});
+      }
+    });
+  });
+
+  saveTodos();saveRules();renderTodos();renderRules();
+
+  var banner=document.getElementById('rules-triggered-banner');
+  var bannerCnt=document.getElementById('rules-triggered-count');
+  var rulesBadge=document.getElementById('rules-alert-badge');
+
+  if(tasksCreated>0){
+    if(banner)banner.style.display='block';
+    if(bannerCnt)bannerCnt.textContent=tasksCreated;
+    if(rulesBadge)rulesBadge.style.display='';
+    sendNotif('⚡ Booking Rules',tasksCreated+' follow-up task'+(tasksCreated>1?'s':'')+' auto-created');
+    setTimeout(function(){if(banner)banner.style.display='none';if(rulesBadge)rulesBadge.style.display='none';},8000);
+  } else {
+    alert('Rules ran — no new matches found on unprocessed bookings.');
+  }
+}
+
+// Hook rules run into bookings fetch
+var _origFetchBookings = fetchBookings;
+fetchBookings = async function(){
+  await _origFetchBookings.apply(this, arguments);
+  // Auto-run rules after bookings load (with slight delay)
+  if(bookingRules.filter(function(r){return r.active;}).length>0){
+    setTimeout(runRulesNow, 1000);
+  }
+};
+
+renderRules();
 
 restoreUrls();
 // Pre-fill all sheet URLs (hardcoded — no manual entry needed)
@@ -1725,6 +3220,7 @@ var _URLS = {
   leads:       'https://script.google.com/macros/s/AKfycbyMz6-sY1hIuX-QeO54Fe2cogSEHaw3KdtBpxmg4QIc2QJO4bdMCRuQHq-mEPFBdJK4/exec',
   missedcalls: 'https://script.google.com/macros/s/AKfycbwB_-2FvUf4dZkUEVtXtXLbocPh2u4KvXKMGvuejMxzRBOyzTVx7VaUhTGfrfHyLsI/exec',
   shopify:     'https://script.google.com/macros/s/AKfycbwIOim2uBpKg3WlLF0g2ap7gtCDuEcisSS1JFMKBcox7p1qh-yEwqjYDFnPDa5BQcnkmA/exec'
+  // reschedules: paste your BK Database reschedules script URL here once created
 };
 Object.keys(_URLS).forEach(function(k){
   store('url_'+k, _URLS[k]);
@@ -1740,6 +3236,7 @@ setTimeout(function(){ try{fetchSMS();}catch(e){console.log('sms err',e);} }, 14
 setTimeout(function(){ try{fetchLeads();}catch(e){console.log('leads err',e);} }, 2200);
 setTimeout(function(){ try{fetchMissedCalls();}catch(e){console.log('mc err',e);} }, 3000);
 setTimeout(function(){ try{fetchShopify();}catch(e){console.log('shopify err',e);} }, 3800);
+// Gmail auto-fetched on first visit to that tab, not on load (avoids unnecessary API calls)
 </script>
 </body>
 </html>
